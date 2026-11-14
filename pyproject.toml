@@ -1,0 +1,27 @@
+[project]
+name = "kotor-switch-modding-tool"
+version = "1.0.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.10"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+authors = [
+    { name = "VeSeeker" },
+]
+keywords = ["Kotor", "Switch", "Modding"]
+classifiers = [
+    "Environment :: Console",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = [
+    "",
+]
+
+[project.scripts]
+ksmt = "ksmt.cli:main"
+
+[project.urls]
+Source = "https://github.com/VeSeeker/kotor-switch-modding-tool"
