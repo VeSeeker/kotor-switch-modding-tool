@@ -4,7 +4,7 @@ import shutil
 
 rootBackupDir = os.path.join(rootDir, "backups")
 
-def Backup(gameNum):
+def Backup(gameNum, deleteAfterBackup=True):
 
     if not CheckInitializedExists(gameNum):
         Error(f"No Kotor {gameNum} folder to backup")
@@ -31,14 +31,17 @@ def Backup(gameNum):
 
     print(f"Generating backup at {targetBackupDir}")
 
-    shutil.move(os.path.join(rootDir, f"K{gameNum}romfs"), targetBackupDir)
+    if deleteAfterBackup:
+        shutil.move(os.path.join(rootDir, f"K{gameNum}romfs"), targetBackupDir)
+    else:
+        shutil.copytree(os.path.join(rootDir, f"K{gameNum}romfs"), targetBackupDir)
 
     return True
 
 def Restore(gameNum):
     if CheckInitializedExists(gameNum):
         Warning(f"Kotor {gameNum} is already initialized")
-        if YesNo(f"Delete initialized folder? (y/N): "):
+        if YesNo(f"Delete initialized folder?: "):
             rmrf(os.path.join(rootDir, f"K{gameNum}"))
         else:
             Error("Can't restore backup when game is already initialized")

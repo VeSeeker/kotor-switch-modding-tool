@@ -9,6 +9,7 @@ Success = lambda t: print(Paint(f"Success! {t}", "32"))
 Warning = lambda t: print(Paint(f"Warning: {t}", "33"))
 Error = lambda t: print(Paint(f"Error: {t}", "31"))
 
+
 K1TitleID = "0100854015868000"
 K2TitleID = "0100B2C016252000"
 
@@ -16,6 +17,7 @@ scriptDir = Path(__file__).resolve().parent
 rootDir = scriptDir.parent
 fileListDir = os.path.join(scriptDir, "fileLists")
 fileList = ["K1PCFolders.txt"]
+
 
 def YesNo(text):
     while True:
@@ -95,6 +97,7 @@ def CheckFileLists():
     else:
         Error("Can't find file list directory (Expected at ksmt/fileLists)")
         return False
+
 def SupportsColor():
     if os.environ.get("NO_COLOR"):
         return False
