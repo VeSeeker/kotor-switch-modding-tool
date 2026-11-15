@@ -1,7 +1,7 @@
 from __future__ import annotations
 from .backup import Backup, Restore
 from .finalize import Finalize
-from .initialize import Init
+from .initialize import Initialize
 from .util import Error, Warning, Success
 import argparse
 
@@ -30,13 +30,14 @@ def ParseArgs():
         help="Select which game you want to mod (1 or 2)",
         type=GameType
     )
+
     return parser.parse_args()
 
 def main():
     args = ParseArgs()
 
     if args.Action == "initialize":
-        if Init(args.game):
+        if Initialize(args.game):
             Success(f"Initialized Kotor {args.game} mod folder")
         else:
             Error(f"Kotor {args.game} mod folder initialization failed")

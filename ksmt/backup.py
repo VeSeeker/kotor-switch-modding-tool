@@ -1,12 +1,10 @@
-from .util import Error, Warning, Success, rootDir, CheckInitializedExists
+from .util import Error, Warning, Success, rootDir, CheckInitializedExists, YesNo, rmrf, Paint
 import os
 import shutil
 
 rootBackupDir = os.path.join(rootDir, "backups")
 
 def Backup(gameNum):
-
-    print("Running pre-flight checks... ")
 
     if not CheckInitializedExists(gameNum):
         Error(f"No Kotor {gameNum} folder to backup")
@@ -21,6 +19,7 @@ def Backup(gameNum):
     nextIndex = 0
 
     backupList = []
+
     for i in os.listdir(rootBackupDir):
         if i[1] == gameNum:
             backupList.append(i)
@@ -30,11 +29,53 @@ def Backup(gameNum):
 
     targetBackupDir = os.path.join(rootBackupDir, f"K{gameNum}_Backup_{nextIndex}")
 
-    print(f"Generating backup at {targetBackupDir}... ")
+    print(f"Generating backup at {targetBackupDir}")
 
     shutil.move(os.path.join(rootDir, f"K{gameNum}romfs"), targetBackupDir)
 
     return True
 
 def Restore(gameNum):
-    return
+    if CheckInitializedExists(gameNum):
+        Warning(f"Kotor {gameNum} is already initialized")
+        if YesNo(f"Delete initialized folder? (y/N): "):
+            rmrf(os.path.join(rootDir, f"K{gameNum}"))
+        else:
+            Error("Can't restore backup when game is already initialized")
+            return False
+
+    backupList = []
+
+    for i in os.listdir(rootBackupDir):
+        if i[1] == gameNum:
+            backupList.append(i)
+
+
+    choice = 0
+
+    validIndexes = []
+    if len(backupList) != 0:
+        print("Available Backups:")
+        for j in backupList:
+            print(j[:-1] + Paint(j[-1], "34"))
+            validIndexes.append(j[-1])
+    else:
+        Error("No available backups to restore")
+        return False
+
+    while True:
+
+        answer = input("Which index do you want to restore?: ")
+
+        if answer in validIndexes:
+            choice = answer
+            break
+        else:
+            Warning("Please enter a valid index")
+
+
+    if YesNo(f"Delete backup {choice} after restore?"):
+        shutil.move(os.path.join(rootBackupDir, f"K{gameNum}_Backup_{choice}"), f"K{gameNum}romfs")
+    else:
+        shutil.copytree(os.path.join(rootBackupDir, f"K{gameNum}_Backup_{choice}"), f"K{gameNum}romfs")
+    return True

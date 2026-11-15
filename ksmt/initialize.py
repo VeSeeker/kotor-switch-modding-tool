@@ -1,6 +1,6 @@
 from .util import Success, Warning, Error, CheckInitializedExists, CheckFileLists, CheckCaseSensitive, MirrorFolders
 
-def Init(gameNum):
+def Initialize(gameNum):
 
     print("")
     print("Running pre-flight checks... ")
