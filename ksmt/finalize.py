@@ -15,7 +15,6 @@ def Finalize(gameNum):
         return False
     targetFolderPath = os.path.join(rootDir, targetFolderName)
 
-
     if not CheckInitializedExists(gameNum):
         Error(f"Cannot finalize when no initialized folder exists")
 
@@ -29,8 +28,9 @@ def Finalize(gameNum):
             return False
 
     switchFolders = (os.path.join(fileListDir, f"K{gameNum}SwitchFolders"))
-    switchFiles = (os.path.join(fileListDir, f"K{gameNum}SwitchFiles"))
-    switchDups = (os.path.join(fileListDir, f"K{gameNum}SwitchDuplicateFiles"))
+    switchFiles = (os.path.join(fileListDir, f"K{gameNum}SwitchFiles.txt"))
+    switchDups = (os.path.join(fileListDir, f"K{gameNum}SwitchDuplicateFiles.txt"))
+    initFolder = os.path.join(rootDir, f"K{gameNum}romfs")
 
     if not os.path.isdir(switchFolders):
         Error(f"Missing file list: {switchFolders}")
@@ -54,6 +54,15 @@ def Finalize(gameNum):
 
     # Here the bash version deletes dialog.tlk and swplayer.ini if they are unmodified. I'm not really sure what the point of that is, so I'm leaving that out for now.
 
+    print("Finding mod files")
+
+    modFiles = []
+    for root, dirs, filenames in os.walk(initFolder):
+        for filename in filenames:
+            modFiles.append(filename)
+
+    print(f"Found {len(modFiles)} modded files")
+
     print(f"Mirroring Kotor {gameNum} Switch ROM folder structure")
 
     if MirrorFolders(targetFolderName, f"K{gameNum}SwitchFolders"):
@@ -61,7 +70,32 @@ def Finalize(gameNum):
     else:
         Error("Switch ROM folder structure mirroring failed")
         return False
-    
+
+    print("Checking for duplicate textures")
+
+
+    print("Building file dictionary")
+
+    fileDict = dict()
+
+    with open(switchFiles, 'r', encoding='utf-8') as f:
+        files = f.readlines()
+
+    for i in files:
+        if '/' not in i:
+            fileName = i
+            filePath = ''
+        else:
+            splt = i.rsplit('/', 1)
+            fileName = splt[-1]
+            filePath = splt[:-1]
+
+        fileDict[fileName] = filePath
+        print(f"Added file {fileName} with {filePath}")
+
+    Success(f"Created {len(fileDict)} dictionary")
+
+
 
 
 
