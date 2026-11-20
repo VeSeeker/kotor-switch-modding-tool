@@ -1,6 +1,7 @@
 from .util import CheckFinalizedExists, CheckInitializedExists, Error, Warning, Success, K1TitleID, K2TitleID, YesNo, rmrf, rootDir, fileListDir, MirrorFolders
 from .backup import Backup, Restore
 import os
+import shutil
 
 def Finalize(gameNum):
 
@@ -27,10 +28,13 @@ def Finalize(gameNum):
             Error("Cannot finalize when finalized folder already exists")
             return False
 
-    switchFolders = (os.path.join(fileListDir, f"K{gameNum}SwitchFolders"))
-    switchFiles = (os.path.join(fileListDir, f"K{gameNum}SwitchFiles.txt"))
-    switchDups = (os.path.join(fileListDir, f"K{gameNum}SwitchDuplicateFiles.txt"))
+    switchFolders = os.path.join(fileListDir, f"K{gameNum}SwitchFolders")
+    switchFiles = os.path.join(fileListDir, f"K{gameNum}SwitchFiles.txt")
+    switchDups = os.path.join(fileListDir, f"K{gameNum}SwitchDuplicateFiles.txt")
     initFolder = os.path.join(rootDir, f"K{gameNum}romfs")
+    overrideDir = os.path.join(initFolder, "override")
+
+    # This should be fine because it needs to be case insensitive, so it finds override and Override. Maybe add a check here that warns about case sensitivity again
 
     if not os.path.isdir(switchFolders):
         Error(f"Missing file list: {switchFolders}")
@@ -73,6 +77,46 @@ def Finalize(gameNum):
 
     print("Checking for duplicate textures")
 
+    # Check if local tga/txi/dds files have a local tpc file in the same directory
+    tpcSet = set()
+    problemExt = [".tga", ".txi", ".dds"]
+    dupTga = []
+
+    for dirPath, dirNames, fileNames in os.walk(overrideDir):
+        for i in fileNames:
+            root, extension = os.path.splitext(i)
+            if extension == ".tpc":
+                tpcSet.add(root)
+    for dirPath, dirNames, fileNames in os.walk(overrideDir):
+        for j in fileNames:
+            root, extension = os.path.splitext(j)
+            if extension in problemExt:
+                if root in tpcSet:
+                    dupTga.append(j)
+
+    if len(dupTga) > 0:
+        Warning(f"{len(dupTga)} files would be overridden by a .tpc file")
+        # word this better ^
+        tpcBackup = (os.path.join(initFolder, "TPCBackup"))
+        os.mkdir(tpcBackup)
+        count = 0
+        for i in dupTga:
+            root, extension = os.path.splitext(i)
+            moveMe = os.path.join(overrideDir, root + ".tpc")
+            if os.path.exists(moveMe):
+                shutil.move(moveMe, tpcBackup)
+                count += 1
+                print(f"\nTpc files moved: {count}", end='')
+        print(f"Moved redundant TPC files to {tpcBackup}")
+
+    # Print a cool counter like this:
+    # for i in X:
+    #   print(f"\rThing: {i}/{total}", end='')
+
+
+
+
+    # Check local tga/txi/dds files for a switch original tpc file
 
     print("Building file dictionary")
 
