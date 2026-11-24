@@ -9,4 +9,5 @@ Currently W.I.P. Basic commands are working, but bugs still exist:
 - Downscaling is done one file at a time
 - TPC to TGA is one file at a time
 - TGA to TPC is one file at a time
+- TGA to TPC might be creating bad files
 - Haven't added specific file fixes from fixRandomTextures.sh
