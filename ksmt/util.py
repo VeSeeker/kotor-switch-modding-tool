@@ -16,7 +16,7 @@ K2TitleID = "0100B2C016252000"
 scriptDir = Path(__file__).resolve().parent
 rootDir = scriptDir.parent
 fileListDir = os.path.join(scriptDir, "fileLists")
-fileList = ["K1PCFolders.txt"]
+fileList = ["K1PCFolders.txt", "K1SwitchFiles.txt", "K1SwitchFolders","K2PCFolders.txt", "K2SwitchFiles.txt", "K2SwitchFolders"]
 
 
 def YesNo(text):
@@ -44,19 +44,24 @@ def MirrorFolders(folderName, targetTXT):
     for i in folders:
         name = i.replace("\n", '')
         os.mkdir(os.path.join(targetFolder, name))
-        print(f"Created folder: {name}")
 
     return True
 
-def CheckCaseSensitive():
-    tmpHandle, tmpPath = tempfile.mkstemp()
-    sens = False
-    if os.path.exists(tmpPath.upper()):
-        sens = False
-    else:
-        sens = True
-    os.remove(tmpPath)
-    return sens
+def CheckCaseSensitive(directory=scriptDir):
+    try:
+        fd, path = tempfile.mkstemp(prefix="CaseCheck_", dir=directory)
+    except OSError:
+        return None
+    try:
+        os.close(fd)
+        folder, name = os.path.split(path)
+        swapped = os.path.join(folder,name.swapcase())
+        return not os.path.exists(swapped)
+    finally:
+        try:
+            os.remove(path)
+        except OSError:
+            pass
 
 def CheckInitializedExists(gameNum):
     if os.path.isdir(os.path.join(rootDir, f"K{gameNum}romfs")):

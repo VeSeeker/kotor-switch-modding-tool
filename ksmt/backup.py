@@ -13,7 +13,6 @@ def Backup(gameNum, deleteAfterBackup=True):
         print("Creating backup folder")
         os.mkdir(rootBackupDir)
 
-    print("Generating next backup name... ")
     # Backups will be called "K{gameNum}_Backup_{index}
 
     nextIndex = 0
