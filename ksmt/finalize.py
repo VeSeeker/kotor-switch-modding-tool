@@ -1,10 +1,51 @@
-from .util import CheckFinalizedExists, CheckInitializedExists, CheckCaseSensitive, Error, Warning, Success, K1TitleID, K2TitleID, YesNo, rmrf, rootDir, fileListDir, MirrorFolders
+from .util import CheckFinalizedExists, CheckInitializedExists, CheckCaseSensitive, Error, Warning, Success, K1TitleID, K2TitleID, YesNo, rmrf, rootDir, fileListDir, MirrorFolders, file_sha256
 from .backup import Backup
 import os
 import shutil
 from .tga2tpc import converter, tex2tga
 import struct
-from .imageresize import downscale, resize
+from .imageresize import downscale, resize, extent_center, crop, save
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+cycleTextures = {
+    "PLC_Kiosk1": "00d627a12e94a68b58d8eb182b2b03645e145df04a463937a1f77c8ead67fcef",
+    "PLC_CompPnl": "d32d6cea0a440a78b5424b361ecde427b33753e723b98d5e1f92ba3b0e36fde7",
+    "PLC_CompPnl_b": "d32d6cea0a440a78b5424b361ecde427b33753e723b98d5e1f92ba3b0e36fde7",
+    "PLC_Desk1": "e8953d8d1e9d44c3141c69679517c04cd6295ddccfe8595191682bade7a1e8ff",
+    "PLC_Sign": "f010020e59eefd2cb1229b9e00545ca2b63b26944e065c24680b613c1342debd",
+    "PLC_RepTab": "8a4daabeb84ee39b723a6a0c16abcf8965823ca4ca8bc206f5f1646bf700538c",
+    "PLC_RepTab2": "f6b4bf29917d9d38add969b4e95fb539a317f0adc3bd80f4df59427017517a3f",
+    "vurt": "31e9b9a69d30799c7c0b082d8b186099cd29da44955efe4b119f789a71605a6c"
+}
+jcBlasterTextures = [
+    "JC_FX_Laser_B2.tga",
+    "JC_FX_Laser_G2.tga",
+    "JC_FX_Laser_R2.tga",
+    "JC_FX_Laser_W2.tga",
+    "JC_FX_Laser_Y2.tga"
+]
+hiResBeamEffects = {
+    "Fx_Lightning.tga": "3645bda08723b36c9cad1516373426caa395a97ecc5e5b248ee09329f54e0fea",
+    "Fx_Drain.tga": "bb199d073ab6742bca459b7ecd14dfa3badd93026739fd319d8767e93d2f6dc1"
+}
+computer = {
+    "lbl_compover.tga": "6aed2664531e60268d1481db5c469a07d51142a8ff311493fbdcb3a96115c177"
+}
+# Maybe remove these
+tslBadIcons = [
+    "iw_hldoblst_001.tga"
+    "iw_hldoblst_002.tga"
+    "iw_hldoblst_003.tga"
+    "iw_hldoblst_004.tga"
+    "iw_hvrptbltr_001.tga"
+    "iw_hvrptbltr_002.tga"
+    "iw_hvrptbltr_003.tga"
+    "iw_hvyblstr_001.tga"
+    "iw_hvyblstr_002.tga"
+    "iw_hvyblstr_003.tga"
+    "iw_hvyblstr_004.tga"
+    "iw_hvyblstr_005.tga"
+]
 
 def Finalize(gameNum):
 
@@ -49,7 +90,7 @@ def Finalize(gameNum):
     if CheckFinalizedExists(gameNum):
         Warning(f"Kotor {gameNum} has already been finalized")
 
-        if YesNo(f"Delete finalized folder?: "):
+        if YesNo(f"Delete finalized folder?"):
             rmrf(targetFolderPath)
         else:
             Error("Cannot finalize when finalized folder already exists")
@@ -155,13 +196,13 @@ def Finalize(gameNum):
 
         convertTga = YesNo(f"Convert {len(dupTga) + len(dupDds)} files to .tpc using tga2tpc-py?")
         if not convertTga:
-            MoveListToInvalidFolder(dupTga)
-            MoveListToInvalidFolder(dupDds)
+            bigList = dupTga.extend(dupDds)
+            MoveListToInvalidFolder(bigList)
             return False
-    downScale = YesNo("Downscale all 4k modded textures?: ")
+    downS = YesNo("Downscale all 4K modded textures?")
     fourKTpc = []
     fourKTga = []
-    if downScale:
+    if downS:
         tga4K = 65000000
         tpc4K = 21000000
         for i in os.listdir(overrideDir):
@@ -176,8 +217,17 @@ def Finalize(gameNum):
         print(f"Found {len(fourKTpc)} 4K .tpc files and {len(fourKTga)} 4K .tga files")
 
     oneNineTwo = []
+    resBeams = []
+    comp = []
+    jcBlast = []
+    cycles = dict()
     oneNineTwoSize = 123
-    print("Finding non-power of 2 textures")
+    for key, _ in cycleTextures.items():
+        cycles[key] = []
+
+    # Build CycleTextures dictionary
+
+    print("Finding problematic textures")
     for i in os.listdir(overrideDir):
         root, extension = os.path.splitext(i)
         if extension.lower() == ".tga":
@@ -188,18 +238,124 @@ def Finalize(gameNum):
                     Warning(f"Couldn't read the size of {i}, skipping")
                     continue
                 width, height = imgSize
-                if width == 192 or width == 172:
-                    if height == 192 or height == 172:
-                        oneNineTwo.append(i)
+                if width == 192 and height == 192:
+                    oneNineTwo.append(i)
+                    continue
+                elif width == 172 and height == 172:
+                    oneNineTwo.append(i)
+                    continue
+        if i in hiResBeamEffects:
+            if file_sha256(os.path.join(overrideDir, i)) == hiResBeamEffects[i]:
+                resBeams.append(i)
+        elif i in computer:
+            if file_sha256(os.path.join(overrideDir, i)) == computer[i]:
+                comp.append(i)
+        elif root in cycleTextures:
+            if extension.lower() == ".txi":
+                cycles[root].append("txi")
+                continue
+            shasha = file_sha256(os.path.join(overrideDir, i))
+            if shasha == cycleTextures[i] or shasha == cycleTextures["vurt"]:
+                cycles[root].append("tga")
+        elif i in jcBlasterTextures:
+            jcBlast.append(i)
+
     cnt = 0
+    tot = len(oneNineTwo) + len(resBeams) + len(comp) + len(jcBlast)
     for i in oneNineTwo:
         pth = os.path.join(overrideDir, i)
-        resize(pth, 256, 256, True)
+        save(resize(pth, 256, 256, True), pth)
         cnt += 1
-        print(f"\rResized {cnt}/{len(oneNineTwo)}", end='')
-    print("")
+        print(f"\rFixed {cnt}/{tot}", end='', flush=True)
 
-    options = tex2tga.TextureOptions()
+    for i in resBeams:
+        pth = os.path.join(overrideDir, i)
+        save(resize(pth, 512, 512, True), pth)
+        cnt += 1
+        print(f"\rFixed {cnt}/{tot}", end='', flush=True)
+
+    for i in comp:
+        pth = os.path.join(overrideDir, i)
+        save(resize(pth, 1024, 256, True), pth)
+        cnt += 1
+        print(f"\rFixed {cnt}/{tot}", end='', flush=True)
+
+    for i in jcBlast:
+        pth = os.path.join(overrideDir, i)
+        save(extent_center(pth, 256, 256), pth)
+        cnt += 1
+        print(f"\rFixed {cnt}/{tot}", end='', flush=True)
+
+    print("")
+    badParams = ["proceduretype", "numx", "numy", "fps", "defaultwidth", "defaultheight"]
+
+    if len(cycles) > 0:
+        print(f"Fixing cycle textures")
+
+    for key, value in cycles.items():
+        if len(value) == 2:
+            nx = None
+            ny = None
+            txiPath = os.path.join(overrideDir, f"{key}.txi")
+            with open(txiPath, 'r', encoding='utf-8') as file:
+                params = file.readlines()
+            for i in range(len(params)):
+                params[i] = params[i].replace("\n", '')
+                if params[i].split()[0] == "numx":
+                    tobe = params[i].split()[1]
+                    if tobe.isdigit():
+                        nx = int(tobe)
+                elif params[i].split()[0] == "numy":
+                    tobe = params[i].split()[1]
+                    if tobe.isdigit():
+                        ny = int(tobe)
+
+            tgaName = f"{key}.tga"
+            pth = os.path.join(overrideDir, tgaName)
+            save(crop(pth, nx, ny), pth)
+            if tgaName in fourKTga:
+                fourKTga.remove(tgaName)
+
+            newParams = []
+            for j in params:
+                if j.split()[0] not in badParams:
+                    newParams.append(j)
+            with open(txiPath, 'w') as f:
+                f.write("\n".join(newParams))
+
+    def _convert_in_threads(jobs, convert_one, worker_limit=8):
+        if not jobs:
+                return [], []
+
+        successes = []
+        failures = []
+
+        with ThreadPoolExecutor(max_workers=min(worker_limit, len(jobs))) as pool:
+            future_to_name = {
+                pool.submit(convert_one, source, output): name
+                for name, source, output in jobs
+            }
+
+            for future in as_completed(future_to_name):
+                name = future_to_name[future]
+                try:
+                    future.result()
+                    successes.append(name)
+                except Exception as exc:
+                    Error(f"Failed to convert {name}: {exc}")
+                    failures.append(name)
+
+                print(
+                    f"\rConverted files {len(successes)}/{len(jobs)}, "
+                    f"{len(failures)} failures",
+                    end="",
+                    flush=True,
+                )
+
+        print()  # Finish the progress line
+        return successes, failures
+
+    tex2tga_options = tex2tga.TextureOptions()
     failedDds = []
     ddsCompleted = 0
     if len(dupDds) > 0:
@@ -208,7 +364,7 @@ def Finalize(gameNum):
         root, _ = os.path.splitext(i)
         newTga = os.path.join(overrideDir, f"{root}.tga")
         try:
-            tex2tga.convert_file(os.path.join(overrideDir, i), newTga, options)
+            tex2tga.convert_file(os.path.join(overrideDir, i), newTga, tex2tga_options)
             ddsCompleted += 1
             dupTga.append(f"{root}.tga")
         except tex2tga.TextureConversionError as exc:
@@ -217,31 +373,58 @@ def Finalize(gameNum):
         except Exception as exc:
             Error(f"Unexpected failure on {i}: {type(exc).__name__}: {exc}")
             failedDds.append(i)
-        print(f"\rConverted {ddsCompleted}/{len(dupDds)}, {len(failedDds)} failures", end='')
+        print(f"\rConverted {ddsCompleted}/{len(dupDds)}, {len(failedDds)} failures", end='', flush=True)
     print("")
     if len(failedDds) > 0:
         MoveListToInvalidFolder(failedDds)
         return False
 
-    tpcCompleted = 0
-    failedTpcConvert = []
+    tpc_jobs = []
     if len(fourKTpc) > 0:
         print("Converting TPC files to TGA for downscaling")
     for i in fourKTpc:
         root, _ = os.path.splitext(i)
         newTga = os.path.join(overrideDir, f"{root}.tga")
-        try:
-            tex2tga.convert_file(os.path.join(overrideDir, i), newTga, options)
-            tpcCompleted += 1
-            dupTga.append(f"{root}.tga")
-        except tex2tga.TextureConversionError as exc:
-            Error(f"Failed to convert {i} to TGA: {exc}")
-            failedTpcConvert.append(i)
-        except Exception as exc:
-            Error(f"Unexpected failure on {i}: {type(exc).__name__}: {exc}")
-            failedTpcConvert.append(i)
-        print(f"\rConverted {tpcCompleted}/{len(fourKTpc)}, {len(failedTpcConvert)} failures", end='')
-    print("")
+        tpc_jobs.append((i, os.path.join(overrideDir, i), newTga))
+    converted_tpc, failedTpcConvert = _convert_in_threads(
+        tpc_jobs,
+        lambda source,
+        output: tex2tga.convert_file(source, output, tex2tga_options)
+    )
+
+    dupTga.extend(f"{os.path.splitext(name)[0]}.tga" for name in converted_tpc)
+
+    def _downscale_one(path, percent):
+        save(downscale(path, percent), path)
+
+    def _downscale_in_threads(paths, percent = 50, worker_limit=8):
+        paths = list(dict.fromkeys(paths))
+        if not paths:
+            return
+        completed = 0
+        failures = []
+
+        with ThreadPoolExecutor(max_workers=min(worker_limit, len(paths))) as pool:
+            future_to_path = {
+                pool.submit(_downscale_one, path, percent): path
+                for path in paths
+            }
+            for future in as_completed(future_to_path):
+                path = future_to_path[future]
+                try:
+                    future.result()
+                    completed += 1
+                except Exception as exc:
+                    failures.append(path)
+                    Error(f"Failed to downscale {os.path.basename(path)}: {exc}")
+                print(
+                    f"\rDownscaled {completed}/{len(paths)}, "
+                        f"{len(failures)} failures",
+                            end='',
+                        flush=True,
+                )
+        print()
+
     if len(failedTpcConvert) > 0:
         print("Failed to convert some TPC files to TGA for downscaling")
         for i in failedTpcConvert:
@@ -251,50 +434,44 @@ def Finalize(gameNum):
         print("Downscaling 4K TPC files")
         for i in fourKTpc:
             root, _ = os.path.splitext(i)
-            downscale(os.path.join(overrideDir, f"{root}.tga"), 50)
+            pth = os.path.join(overrideDir, f"{root}.tga")
+            save(downscale(pth, 50), pth)
             cnt += 1
-            print(f"\rDownscaled {cnt}/{len(fourKTpc)}", end='')
+            print(f"\rDownscaled {cnt}/{len(fourKTpc)}", end='', flush=True)
     print("")
 
     if len(fourKTga) > 0:
         cnt = 0
         print("Downscaling 4K TGA files")
         for i in fourKTga:
-            downscale(os.path.join(overrideDir, i), 50)
+            pth = os.path.join(overrideDir, i)
+            save(downscale(pth, 50), pth)
             cnt += 1
-            print(f"\rDownscaled {cnt}/{len(fourKTga)}", end='')
+            print(f"\rDownscaled {cnt}/{len(fourKTga)}", end='', flush=True)
     print("")
 
-    options = converter.ConversionOptions().normalised()
+    converter_options = converter.ConversionOptions().normalised()
 
     if len(dupTga) > 0:
         print("Converting textures to TPC")
 
-    completed = 0
-    failedFiles = []
-
+    tga_jobs = []
     for i in dupTga:
-        root, extension = os.path.splitext(i)
+        root, _ = os.path.splitext(i)
         newTpc = os.path.join(overrideDir, f"{root}.tpc")
-        try:
-            converter.convert_file(os.path.join(overrideDir, i), newTpc, options)
-            completed += 1
-            modTpcSet.add(root.lower())
-        except converter.ConversionError as exc:
-            Error(f"Failed to convert {i}: {exc}")
-            failedFiles.append(i)
-        print(f"\rConverted {completed}/{len(dupTga)}, {len(failedFiles)} failures", end='')
+        tga_jobs.append((i, os.path.join(overrideDir, i), newTpc))
 
-    print("")
+    converted_tga, failedFiles = _convert_in_threads(tga_jobs, lambda source, output: converter.convert_file(source, output, converter_options),)
+    for name in converted_tga:
+        modTpcSet.add(os.path.splitext(name)[0].lower())
 
-    print(f"{completed} files converted, {len(failedFiles)} files failed to convert")
     if len(failedFiles) > 0:
         MoveListToInvalidFolder(failedFiles)
         return False
 
     if os.path.isdir(invalidPath):
         Error(f"{invalidPath} needs to be deleted before finalizing")
-        if YesNo(f"Delete {invalidPath}?: "):
+        if YesNo(f"Delete {invalidPath}?"):
             rmrf(invalidPath)
         else:
             return False
@@ -353,7 +530,7 @@ def Finalize(gameNum):
         _, fullName = os.path.split(i)
         shutil.move(i, os.path.join(targetFolderPath, allSwitchFiles[fullName.lower()]))
         count += 1
-        print(f"\rMoving modded base game files: {count}/{len(vanillaModFiles)}", end='')
+        print(f"\rMoving modded base game files: {count}/{len(vanillaModFiles)}", end='', flush=True)
     print("")
 
     newTextures = []
@@ -400,7 +577,7 @@ def Finalize(gameNum):
         _, name = os.path.split(i)
         shutil.move(i, os.path.join(texPath, name))
         cnt += 1
-        print(f"\rMoved texture files: {cnt}/{len(newTextures)}", end='')
+        print(f"\rMoved texture files: {cnt}/{len(newTextures)}", end='', flush=True)
     print("")
 
     if len(new2da) > 0:
@@ -410,7 +587,7 @@ def Finalize(gameNum):
         _, name = os.path.split(i)
         shutil.move(i, os.path.join(twoDAPath, name))
         cnt += 1
-        print(f"\rMoved 2da files: {cnt}/{len(new2da)}", end='')
+        print(f"\rMoved 2da files: {cnt}/{len(new2da)}", end='', flush=True)
     print("")
 
     if len(newLocalized) > 0:
@@ -421,7 +598,7 @@ def Finalize(gameNum):
         relPath = os.path.relpath(path, initFolder)
         shutil.move(i, os.path.join(localizedPath, relPath, name))
         cnt += 1
-        print(f"\rMoved localized files: {cnt}/{len(newLocalized)}", end='')
+        print(f"\rMoved localized files: {cnt}/{len(newLocalized)}", end='', flush=True)
     print("")
 
     if len(basicFile) > 0:
@@ -432,11 +609,22 @@ def Finalize(gameNum):
         relPath = os.path.relpath(path, initFolder)
         shutil.move(i, os.path.join(targetFolderPath, relPath, name))
         cnt += 1
-        print(f"\rMoved remaining files: {cnt}/{len(basicFile)}", end='')
+        print(f"\rMoved remaining files: {cnt}/{len(basicFile)}", end='', flush=True)
     print("")
 
     Success(f"Finalized folder created at {targetFolderPath}")
 
     # Check if there are any files left in the init folder, and if not, delete the init folder
+
+    deleteAfter = True
+    for root, dirs, filenames in os.walk(initFolder):
+        if len(filenames) > 0:
+            Warning(f"{len(filenames)} files left in initialized folder")
+            deleteAfter = False
+        for i in filenames:
+            print(i)
+    if deleteAfter:
+        print("Clearing initialized folder (A backup still exists)")
+        rmrf(initFolder)
 
     return True

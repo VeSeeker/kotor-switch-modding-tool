@@ -3,6 +3,7 @@ from pathlib import Path
 import sys
 import tempfile
 import shutil
+import hashlib
 
 # Text colors
 Success = lambda t: print(Paint(f"Success! {t}", "32"))
@@ -16,12 +17,18 @@ K2TitleID = "0100B2C016252000"
 scriptDir = Path(__file__).resolve().parent
 rootDir = scriptDir.parent
 fileListDir = os.path.join(scriptDir, "fileLists")
-fileList = ["K1PCFolders.txt", "K1SwitchFiles.txt", "K1SwitchFolders","K2PCFolders.txt", "K2SwitchFiles.txt", "K2SwitchFolders"]
+fileList = ["K1PCFolders.txt", "K1SwitchFiles.txt", "K1SwitchFolders.txt","K2PCFolders.txt", "K2SwitchFiles.txt", "K2SwitchFolders.txt"]
 
+def file_sha256(path, chunk_size=65536):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        while chunk := f.read(chunk_size):
+            h.update(chunk)
+    return h.hexdigest()
 
 def YesNo(text):
     while True:
-        answer = input(text)
+        answer = input(f"{text} (y/n): ")
         if answer.lower() == 'y':
             return True
         elif answer.lower() == 'n':

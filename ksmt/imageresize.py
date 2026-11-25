@@ -155,6 +155,27 @@ def _resample_axis(a, n_out, kernel, support, axis, work_dtype):
 
 
 # ---------------------------------------------------------------- resize
+def crop_array(img, width, height, x=0, y=0):
+    """-crop WxH+x+y +repage   (default: from the top-left corner)
+    If the box runs past the image edge it is clipped, not padded, so the
+    result can be smaller than WxH (same as ImageMagick). Raises if the box
+    lies entirely outside the image."""
+    width = _check_size("width", width)
+    height = _check_size("height", height)
+    a = np.asarray(img)
+    if a.ndim not in (2, 3):
+        raise ValueError("expected (H, W) or (H, W, C) array")
+    h, w = a.shape[:2]
+    x0, y0 = max(int(x), 0), max(int(y), 0)
+    x1, y1 = min(int(x) + width, w), min(int(y) + height, h)
+    if x1 <= x0 or y1 <= y0:
+        raise ValueError("crop box lies outside the image")
+    return a[y0:y1, x0:x1].copy()
+
+
+def crop(path, width, height, x=0, y=0, auto_orient=False):
+    return crop_array(load(path, auto_orient=auto_orient), width, height, x, y)
+
 def resize_array(img, width, height, force=False, rounding=None, filter=None):
     """-resize WxH   (force=False: fit inside box, keep aspect)
        -resize WxH!  (force=True : exactly WxH, ignore aspect)

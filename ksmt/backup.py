@@ -40,7 +40,7 @@ def Backup(gameNum, deleteAfterBackup=True):
 def Restore(gameNum):
     if CheckInitializedExists(gameNum):
         Warning(f"Kotor {gameNum} is already initialized")
-        if YesNo(f"Delete initialized folder?: "):
+        if YesNo(f"Delete initialized folder?"):
             rmrf(os.path.join(rootDir, f"K{gameNum}"))
         else:
             Error("Can't restore backup when game is already initialized")
