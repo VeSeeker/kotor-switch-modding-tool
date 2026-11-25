@@ -46,6 +46,48 @@ tslBadIcons = [
     "iw_hvyblstr_004.tga"
     "iw_hvyblstr_005.tga"
 ]
+# Don't put extension, put them all in lowercase
+K1extraDownscaleTextures = [
+    "jc_ithoriancz01",
+    "lts_lotrim01",
+    "lts_lotrim02",
+    "lts_lotrim04",
+    "lts_lotrim09",
+    "lts_lotrim10",
+    "lts_loflr05",
+    "lta_flalpha",
+    "lta_flr01a",
+    "lta_flr01",
+    "lta_sail02",
+    "lta_sand01",
+    "lta_wall00",
+    "lta_wll01",
+    "lta_wll01_00a",
+    "lda_bark04",
+    "lda_flr01",
+    "lyv_wall03",
+    "lyv_wall04",
+    "lyv_wall05",
+    "lyv_wall08",
+    "lyv_wall09",
+    "lun_grss02",
+    "lun_wll01",
+    "lun_wll02"
+]
+K2extraDownscaleTxtures = [
+    "per_cl01",
+    "per_gr02",
+    "per_wl01",
+    "tel_stl3",
+    "tel_stl4",
+    "tel_stl5",
+    "tel_stl6",
+    "tel_stl7",
+    "nar_cr8",
+    "nar_fl04",
+    "nar_wl01",
+    "nar_wl10"
+]
 
 def Finalize(gameNum):
 
@@ -53,8 +95,10 @@ def Finalize(gameNum):
 
     if gameNum == "1":
         targetFolderName = K1TitleID
+        extraDownscaleTextures = K1extraDownscaleTextures
     elif gameNum == "2":
         targetFolderName = K2TitleID
+        extraDownscaleTextures = K2extraDownscaleTxtures
     else:
         Error(f"Invalid game number: {gameNum}")
         return False
@@ -200,6 +244,7 @@ def Finalize(gameNum):
             MoveListToInvalidFolder(bigList)
             return False
     downS = YesNo("Downscale all 4K modded textures?")
+    extraDownS = YesNo("Extra downscales? (VeSeeker's modding guide)")
     fourKTpc = []
     fourKTga = []
     if downS:
@@ -468,6 +513,28 @@ def Finalize(gameNum):
     if len(failedFiles) > 0:
         MoveListToInvalidFolder(failedFiles)
         return False
+
+    extras = []
+
+    if extraDownS:
+        tpcOptions = converter.ConversionOptions().normalised()
+        for i in os.listdir(overrideDir):
+            root, _ = os.path.splitext(i)
+            if root.lower() in extraDownscaleTextures:
+                extras.append(i)
+
+        for i in extras:
+            pth = os.path.join(overrideDir, i)
+            root, ext = os.path.splitext(i)
+            tgaPth = os.path.join(overrideDir, f"{root}.tga")
+            if ext.lower() == '.tpc':
+                tex2tga.convert_file(pth, os.path.join(tgaPth), tex2tga_options)
+                save(downscale(tgaPth, 50), tgaPth)
+                converter.convert_file(tgaPth, pth, tpcOptions)
+            elif ext.lower() == '.tga':
+                save(downscale(pth, 50), pth)
+            else:
+                print(f"How to downscale {pth}?")
 
     if os.path.isdir(invalidPath):
         Error(f"{invalidPath} needs to be deleted before finalizing")
