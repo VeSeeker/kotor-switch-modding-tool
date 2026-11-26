@@ -240,8 +240,7 @@ def Finalize(gameNum):
 
         convertTga = YesNo(f"Convert {len(dupTga) + len(dupDds)} files to .tpc using tga2tpc-py?")
         if not convertTga:
-            bigList = dupTga.extend(dupDds)
-            MoveListToInvalidFolder(bigList)
+            MoveListToInvalidFolder(dupTga + dupDds)
             return False
     downS = YesNo("Downscale all 4K modded textures?")
     extraDownS = YesNo("Extra downscales? (VeSeeker's modding guide)")
@@ -474,26 +473,15 @@ def Finalize(gameNum):
         print("Failed to convert some TPC files to TGA for downscaling")
         for i in failedTpcConvert:
             fourKTpc.remove(i)
-    if len(fourKTpc) > 0:
-        cnt = 0
-        print("Downscaling 4K TPC files")
-        for i in fourKTpc:
-            root, _ = os.path.splitext(i)
-            pth = os.path.join(overrideDir, f"{root}.tga")
-            save(downscale(pth, 50), pth)
-            cnt += 1
-            print(f"\rDownscaled {cnt}/{len(fourKTpc)}", end='', flush=True)
-    print("")
-
-    if len(fourKTga) > 0:
-        cnt = 0
-        print("Downscaling 4K TGA files")
-        for i in fourKTga:
-            pth = os.path.join(overrideDir, i)
-            save(downscale(pth, 50), pth)
-            cnt += 1
-            print(f"\rDownscaled {cnt}/{len(fourKTga)}", end='', flush=True)
-    print("")
+    downScaleMe = [
+        os.path.join(overrideDir, f"{os.path.splitext(name)[0]}.tga")
+        for name in fourKTpc
+    ]
+    downScaleMe.extend(
+        os.path.join(overrideDir, name)
+        for name in fourKTga
+    )
+    _downscale_in_threads(downScaleMe)
 
     converter_options = converter.ConversionOptions().normalised()
 
@@ -514,27 +502,6 @@ def Finalize(gameNum):
         MoveListToInvalidFolder(failedFiles)
         return False
 
-    extras = []
-
-    if extraDownS:
-        tpcOptions = converter.ConversionOptions().normalised()
-        for i in os.listdir(overrideDir):
-            root, _ = os.path.splitext(i)
-            if root.lower() in extraDownscaleTextures:
-                extras.append(i)
-
-        for i in extras:
-            pth = os.path.join(overrideDir, i)
-            root, ext = os.path.splitext(i)
-            tgaPth = os.path.join(overrideDir, f"{root}.tga")
-            if ext.lower() == '.tpc':
-                tex2tga.convert_file(pth, os.path.join(tgaPth), tex2tga_options)
-                save(downscale(tgaPth, 50), tgaPth)
-                converter.convert_file(tgaPth, pth, tpcOptions)
-            elif ext.lower() == '.tga':
-                save(downscale(pth, 50), pth)
-            else:
-                print(f"How to downscale {pth}?")
 
     if os.path.isdir(invalidPath):
         Error(f"{invalidPath} needs to be deleted before finalizing")
@@ -560,6 +527,56 @@ def Finalize(gameNum):
     for i in redTga:
         os.remove(os.path.join(overrideDir, i))
     Success("Cleaned up redundant files")
+
+    exTpc = []
+    exTga = []
+    conTpc = []
+
+    if extraDownS:
+        print("Performing extra downscales")
+        for i in os.listdir(overrideDir):
+            root, ext = os.path.splitext(i)
+            if root.lower() not in extraDownscaleTextures:
+                continue
+            if ext.lower() == ".tpc":
+                newTga = os.path.join(overrideDir, f"{root}.tga")
+                conTpc.append((i, os.path.join(overrideDir, i), newTga))
+                exTpc.append(i)
+            elif ext.lower() == ".tga":
+                exTga.append(i)
+
+        converted_tpc, failedTpcConvert = _convert_in_threads(
+        conTpc,
+        lambda source,
+        output: tex2tga.convert_file(source, output, tex2tga_options)
+        )
+
+        downScaleMe = [
+            os.path.join(overrideDir, f"{os.path.splitext(name)[0]}.tga")
+            for name in converted_tpc
+        ]
+        downScaleMe.extend(
+            os.path.join(overrideDir, name)
+            for name in exTga
+        )
+        _downscale_in_threads(downScaleMe)
+
+        tpcJobs = []
+        for i in converted_tpc:
+            root, ext = os.path.splitext(i)
+            oldTga = f"{root}.tga"
+            tpcJobs.append((oldTga, os.path.join(overrideDir, oldTga), os.path.join(overrideDir, i)))
+
+        converted_tga, failedFiles = _convert_in_threads(tpcJobs, lambda source, output: converter.convert_file(source, output, converter_options),)
+
+        for i in converted_tpc:
+            root, _ = os.path.splitext(i)
+            badTga = os.path.join(overrideDir, f"{root}.tga")
+            badTxi = os.path.join(overrideDir, f"{root}.txi")
+            if os.path.isfile(badTga):
+                os.remove(badTga)
+            if os.path.isfile(badTxi):
+                os.remove(badTxi)
 
     print(f"Mirroring Kotor {gameNum} Switch ROM folder structure")
 
