@@ -3,9 +3,11 @@
 This is a python rewrite of DrSnuggly's [kotor-ii-switch-modding](https://github.com/DrSnuggly/kotor-ii-switch-modding). It supports both Kotor 1 & 2, and should run on any OS with Python.
 It also optionally uses the same logic as my tga2tpc-py to automatically convert .tga files to .tpc, as well as downscale 4k textures.
 
-Based on and inspired by work from:
-[DrSnuggly](https://github.com/DrSnuggly)
-[jacqylfrost](https://deadlystream.com/profile/48469-jacqylfrost/)
+Based on and inspired by work from:\
+[DrSnuggly](https://github.com/DrSnuggly)\
+[jacqylfrost](https://deadlystream.com/profile/48469-jacqylfrost/)\
+[JC2](https://deadlystream.com/profile/25613-jc2/)\
+[Leilukin](https://deadlystream.com/profile/23862-leilukin/)
 
 ## Features
 

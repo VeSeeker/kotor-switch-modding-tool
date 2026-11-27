@@ -5,3 +5,5 @@ K2romfs/
 backups/
 __pycache__/
 
+*.zip
+

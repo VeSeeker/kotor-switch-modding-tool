@@ -34,7 +34,7 @@ def YesNo(text):
         elif answer.lower() == 'n':
             return False
         else:
-            Warning("Please enter either y or n")
+            Warning("Please enter y or n")
 
 def MirrorFolders(folderName, targetTXT):
     targetFolder = os.path.join(rootDir, folderName)

@@ -31,21 +31,20 @@ hiResBeamEffects = {
 computer = {
     "lbl_compover.tga": "6aed2664531e60268d1481db5c469a07d51142a8ff311493fbdcb3a96115c177"
 }
-# Maybe remove these
-tslBadIcons = [
-    "iw_hldoblst_001.tga"
-    "iw_hldoblst_002.tga"
-    "iw_hldoblst_003.tga"
-    "iw_hldoblst_004.tga"
-    "iw_hvrptbltr_001.tga"
-    "iw_hvrptbltr_002.tga"
-    "iw_hvrptbltr_003.tga"
-    "iw_hvyblstr_001.tga"
-    "iw_hvyblstr_002.tga"
-    "iw_hvyblstr_003.tga"
-    "iw_hvyblstr_004.tga"
-    "iw_hvyblstr_005.tga"
-]
+tslBadIcons = {
+    "iw_hldoblst_001.tga": "1f87454d86e1a2840ddfc9f57a7ddfeaf3d716e8c78e174036ccbb48d1ff101a",
+    "iw_hldoblst_002.tga": "d4a17bfaffba4c023964fa17bee3adfbf50d979b3e45f6d162fbc4bad5ad6549",
+    "iw_hldoblst_003.tga": "f4065a834b5a09dd678adf6c1ba349f58ec8d66b46ac1d3ecfe84d1c108f245a",
+    "iw_hldoblst_004.tga": "6ef324151f75b63494bba3977331d453b60a7640b40af6df324e8ceee252e695",
+    "iw_hvrptbltr_001.tga": "a073385fedc1e8c962493d574aca5f1bc0b18fa6e3587eee93cddabd300aa2a0",
+    "iw_hvrptbltr_002.tga": "63b97f25821f43c0678d0e762ae021aa7ecf63826dc9064498da8bafefc7d8a6",
+    "iw_hvrptbltr_003.tga": "6ba6c6bd7c538133b5d3fa85c9b9d0237c46f98ee353d8444088625a3d896e51",
+    "iw_hvyblstr_001.tga": "0a207afaa1c47d190a7c98fceb1fe2e9e7e1700ff580eaaa0e425f3dea7cb1b5",
+    "iw_hvyblstr_002.tga": "4f86e90192c4edb71212a28dda3af6b1792aa89a6053c27895a73bf08c94fb0a",
+    "iw_hvyblstr_003.tga": "c70c45db68d9114bbacd80781637c3df5877870c8a1dbbe74628847a84f50537",
+    "iw_hvyblstr_004.tga": "06b554858f561811b1af25bfdcc00ce3b075ea9fa5715e16a29db326777da120",
+    "iw_hvyblstr_005.tga": "de74d1c6354cf31c49cc95fcc1d2b80ea04a2a0567ae28a305a8ef7fabde68c0",
+}
 # Don't put extension, put them all in lowercase
 K1extraDownscaleTextures = [
     "jc_ithoriancz01",
@@ -264,8 +263,9 @@ def Finalize(gameNum):
     resBeams = []
     comp = []
     jcBlast = []
+    tslBad = []
     cycles = dict()
-    oneNineTwoSize = 123
+    oneNineTwoSize = 22000
     for key, _ in cycleTextures.items():
         cycles[key] = []
 
@@ -303,9 +303,13 @@ def Finalize(gameNum):
                 cycles[root].append("tga")
         elif i in jcBlasterTextures:
             jcBlast.append(i)
+        elif i in tslBadIcons:
+            shasha = file_sha256(os.path.join(overrideDir, i))
+            if shasha == tslBadIcons[i]:
+                tslBad.append(i)
 
     cnt = 0
-    tot = len(oneNineTwo) + len(resBeams) + len(comp) + len(jcBlast)
+    tot = len(oneNineTwo) + len(resBeams) + len(comp) + len(jcBlast) + len(tslBad)
     for i in oneNineTwo:
         pth = os.path.join(overrideDir, i)
         save(resize(pth, 256, 256, True), pth)
@@ -325,6 +329,12 @@ def Finalize(gameNum):
         print(f"\rFixed {cnt}/{tot}", end='', flush=True)
 
     for i in jcBlast:
+        pth = os.path.join(overrideDir, i)
+        save(extent_center(pth, 256, 256), pth)
+        cnt += 1
+        print(f"\rFixed {cnt}/{tot}", end='', flush=True)
+
+    for i in tslBad:
         pth = os.path.join(overrideDir, i)
         save(extent_center(pth, 256, 256), pth)
         cnt += 1
