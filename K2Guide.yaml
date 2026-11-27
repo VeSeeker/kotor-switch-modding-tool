@@ -1,4 +1,4 @@
-title: Kotor 1 Switch Modding Guide
+title: Kotor 2 Switch Modding Guide
 author: VeSeeker
 
 sections:
@@ -6,28 +6,43 @@ sections:
     title: Introduction
     subtitle: You don't have to read this, but you may have questions if you don't
     body: |
-      This guide is based on the neocities [KOTOR 1 Full Build for PC](https://kotor.neocities.org/modding/mod_builds/k1/full).
+      This guide is based on the neocities [KOTOR 2 Full Build for PC](https://kotor.neocities.org/modding/mod_builds/k2/full). I have gotten the vast majority of the mods in that build working on the Switch. You will need a modded Switch [running custom firmware](https://switch.hacks.guide/), or an emulator.
 
-      Some modules get extremely close to the VRAM limit, so follow this guide closely. See {{ref:vram}}.
+      Beyond the need for a modded Switch, there are a few things that make modding Kotor on the Switch more difficult. One thing is that the Switch version shipped with a lot of `.tpc` texures in it's override folder. Any modded `.tga` or `.dds` file will not override those files unless we convert them to `.tpc`. My [modding tool](https://github.com/VeSeeker/kotor-switch-modding-tool) handles this.
+
+      On the topic of textures, many of the mods we will install use 4k textures. Although quite the visual improvement, they end up causing {{ref:vram}}. The solution to this that I use is to downscale all the 4k textures by 50%. You could probably min-max this by only downscaling half of them or something, but I don't feel like it would be worth it. My modding tool also takes care of downscaling textures. If you are worried about the quality loss, don't be. The 2k textures are still a massive improvement over the originals. Some modules get extremely close to the VRAM limit, so follow this guide closely.
+
   - id: setup
     title: Setup
     subtitle: You really do need to read this part
     body: |
-      This is the setup section.
+      You should download the latest release of my [modding tool](https://github.com/VeSeeker/kotor-switch-modding-tool).
+
+      Some mods need files from the base game in order to successfully install. You can do this through the Switch with [nxdumptool](https://github.com/DarkMatterCore/nxdumptool), or through an emulator (which I think is easier).
+
+      I will annotate mod names based on their installation process as compared to the neocities guide:
+
+      Normal installation
+      ~~Mod not working on the Switch~~
+
+      I made a few '[patches](https://www.mediafire.com/folder/40ihkqn3tezon/Patches)' to make mods work on the Switch. What these actually are for the most part is just `.txi` files from the base game that aren't included in the mod files.
+
+      Finally, many mods use the TSLPatcher. Sometimes, this patcher is set to automatically detect your Kotor install. You'll need to change that setting {{ref:tslpatcher}} if you have the PC version of the game installed (or even if you've had it installed before and the folder still exists). I'll include in the installation instructions if that mod's TSLPatcher automatically detects or not
+
     children:
       - id: tools
         title: Tools
-        body: |
-          This is the tools body
         children:
           - id: ksmt
             title: Kotor Switch Modding Tool
             body: |
-              I made this cool tool
+              Download [here](https://github.com/VeSeeker/kotor-switch-modding-tool). This is a really cool tool that I wrote. It is a rewrite of DrSnuggly's [kotor-ii-switch-modding](https://github.com/DrSnuggly/kotor-ii-switch-modding). It's a bit faster, includes automatic downscaling, and *should* work on Windows, Mac, and Linux.
+
+              The repository has more detailed information, so check there if you have any questions. To get started, download the latest release and extract the folder somewhere convienient. Open a terminal in that folder and run `ksmt initialize 2`. That should create the folder `kotor-switch-modding-tool/K2romfs`. This is the folder you will be installing all of your mods into.
           - id: tslpatcher
-            title: Fixing TSLPatcher automatic installation detection
+            title: TSLPatcher automatic installation detection
             body: |
-              Fix that tool
+              Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normally called `changes.ini` and is located in the tslpatchdata folder. If it is called something different, I will include that in the mod's installation instructions.
   - id: mods
     title: Mods
     children:
@@ -40,34 +55,55 @@ sections:
         method: [Loose-file]
         install: Extract the texture files into override, not a subfolder
 
-      - id: character-startup
+      - id: 3c-fd-patcher
         type: mod
-        title: Character Startup Changes & Patch
-        author: jonathan7, patch by A Future Pilot
+        title: ~~3C-FD Patcher~~
+        author: J
         downloads:
-          - {label: Mod, url: "http://deadlystream.com/files/file/349-character-start-up-change/"}
-          - {label: Patch, url: "https://mega.nz/file/sRw1GBIK#J8znLBwR6t7ZvZnpQbsUBYcUNfPCWA7wYNW3qU6gZSg"}
-        method: [TSLPatcher, Loose-file]
+          - {label: Mod, url: "https://deadlystream.com/files/file/2734-fog-fix-more-3c-fd-patcher/"}
+        method: [Executable]
         install: |
-          Run TSLPatcher first, then copy the loose files into override.
+          We fix the Aspyr patch through {{ref:ips-patches}}
+
+      - id: water-restoration
+        type: mod
+        title: Water Restoration
+        author: J
+        downloads:
+          - {label: Mod, url: "https://deadlystream.com/files/file/2758-water-restoration/"}
+        method: [Loose-file]
+
+      - id: stutter-fix
+        type: mod
+        title: Stutter Fix
+        author: J
+        downloads:
+          - {label: Mod, url: "https://deadlystream.com/files/file/2699-stutter-fix-and-force-cage-update/"}
+        method: [Loose-file]
+        download_instructions: |
+          If you want both the fix and the new force cage model, download just forcecage_updated_1.1.0.zip
 
       - id: 4gb-patcher
         type: mod
-        title: 4GB Patcher
+        title: ~~4GB Patcher~~
         author: Daniel Pistelli
         downloads:
-          - {label: Patch, url: "https://ntcore.com/?page_id=371"}
-        method: ["Executable"]
+          - {label: Mod, url: "https://ntcore.com/?page_id=371"}
+        method: [Executable]
         install: |
-          This step should only be performed if you are NOT on the Aspyr patch and have not applied J's 3C-FD patcher! 3C-FD applies this as part of its fixes to the Aspyr version. Just like 3C-FD, since the Mac Appstore version is not an executable, this program cannot be utilized on the Mac Appstore edition of the game.
+          There is no `.exe` to patch lol
 
       - id: tslrcm
         type: mod
-        title: TSLRCM
-        author: zbyl2, DarthStoney, Hassat Hunter & VarsityPuppet
+        title: TSLRCM & Switch Patch
+        author: zbyl2, DarthStoney, Hassat Hunter & VarsityPuppet, Switch Patch by VeSeeker
         downloads:
           - {label: Mod, url: "https://deadlystream.com/files/file/578-tsl-restored-content-mod/"}
-        method: ["Executable"]
+          - {label: Switch dialog.tlk, url: "https://gbatemp.net/threads/knights-of-the-old-republic-ii-switch-modding.635861/"}
+          - {label: Switch Patch, url: "https://www.mediafire.com/file/ilpo07v3a7nmliu/TSLRCM_Switch_Patch.zip/file"}
+        method: ["Executable", Loose-file]
+        install: |
+          After installing the mod, replace dialog.tlk in `K2romfs` with the one linked above. Then extract the 2 .bik files from the Switch Patch into `K2romfs/Movies/`
 
       - id: tslrcm-tweak-pack
         type: mod
@@ -137,7 +173,7 @@ sections:
           - {label: Patch, url: "https://deadlystream.com/files/file/1280-kotor-2-community-patch/"}
         method: ["TSLPatcher"]
         install: |
-          Remember, warnings during an installation are normal—errors are not.
+          After installing, delete P_HK47.mdl and .mdx. See {{ref:model-problems}}
 
       - id: remote-tells-influence
         type: mod
@@ -166,6 +202,8 @@ sections:
         install: |
           Download the .tpc variant of the mod. Delete PER_Gr01.tpc, TEL_rock.tpc through TEL_rock07.tpc, and TEL_wl05.tpc before moving the files to your override folder.
 
+          Delete or fix PER_Rk01, 02, TEL_Bra01, TEL_gr03. See {{ref:texture-outlines}}
+
       - id: ultimate-character-overhaul
         type: mod
         title: Ultimate Character Overhaul
@@ -173,8 +211,10 @@ sections:
         downloads:
           - {label: Mod, url: "https://www.nexusmods.com/kotor2/mods/1060"}
         method: ["Loose-file"]
+        download-instructions: |
+          2x TPC version
         install: |
-          For now, ignore all patches (those will be installed later). Just download the main package, either Full or Lite based on your quality preferences (I recommend the 2x version, as the graphical differences are minimal). Just MAKE SURE they are in .tpc file format! Delete N_OndSoldMH1.tpc, PMBJ02.tpc, PMHC03.tpc, PMHC03D1.tpc, and PMHC03D2.tpc before moving to override.
+          For now, ignore all patches (those will be installed later). Just download the main package. Just MAKE SURE they are in .tpc file format! Delete N_OndSoldMH1.tpc, PMBJ02.tpc, PMHC03.tpc, PMHC03D1.tpc, and PMHC03D2.tpc before moving to override.
 
       - id: ultimate-nar-shaddaa
         type: mod
@@ -186,6 +226,8 @@ sections:
         install: |
           Download the .tpc variant of the mod. Delete NAR_fl01.tpc, NAR_Met4.tpc, and NAR_wl07.tpc before moving to your Override.
 
+          Delete or fix NAR_gar1, 2. See {{ref:texture-outlines}}
+
       - id: ultimate-dantooine
         type: mod
         title: Ultimate Dantooine
@@ -195,6 +237,8 @@ sections:
         method: ["Loose-file"]
         install: |
           Download the .tpc variant of the mod. Delete DAN_birds.tpc, DAN_MWFl.tpc, DAN_NEW1.tpc and DAN_wall03.tpc before moving to your Override.
+
+          Delete or fix DAN_leaf02, 03. See {{ref:texture-outlines}}
 
       - id: ultimate-dxun
         type: mod
@@ -282,6 +326,8 @@ sections:
         downloads:
           - {label: Mod, url: "https://deadlystream.com/files/file/1904-honest-merchant-tslrcm/"}
         method: ["TSLPatcher"]
+        install: |
+          {{ref:tslpatcher}}
 
       - id: jcs-minor-fixes
         type: mod
@@ -346,11 +392,14 @@ sections:
 
       - id: animated-energy-shields
         type: mod
-        title: Animated Energy Shields
-        author: Dark Hope
+        title: Animated Energy Shields & Switch Patch
+        author: Dark Hope, Switch Patch by VeSeeker
         downloads:
           - {label: Mod, url: "https://deadlystream.com/files/file/2193-animated-energy-shields/"}
+          - {label: Switch Patch, url: "https://www.mediafire.com/file/a7dwopmivrocajp/Animated_Energy_Shields_Switch_Patch.zip/file"}
         method: ["Loose-file"]
+        install: |
+          Install the main mod, then move the files from the Switch Patch into override.
 
       - id: blaster-visual-effects
         type: mod
@@ -590,21 +639,27 @@ sections:
 
       - id: t3m4-hd-2k
         type: mod
-        title: T3M4 HD 2K
-        author: Darth_Sapiens
+        title: T3M4 HD 2K & Switch Patch
+        author: Darth_Sapiens, Switch Patch by VeSeeker
         downloads:
           - {label: Mod, url: "http://deadlystream.com/files/file/514-darth-sapiens-presents-t3m4-hd-2k/"}
+          - {label: Switch Patch, url: "https://www.mediafire.com/file/ilpo07v3a7nmliu/TSLRCM_Switch_Patch.zip/file"}
         method: ["Loose-file"]
         install: |
           If present in your Override, P_t3m4_01.tpc/.tga must be deleted so this mod's .dds-based files will load.
 
+          Install the main mod, then move the files in the Switch Patch into override.
+
       - id: hd-astromechs
         type: mod
-        title: HD Astromechs
-        author: Darth_Sapiens and Sith Holocron
+        title: HD Astromechs & Switch Patch
+        author: Darth_Sapiens and Sith Holocron, Switch Patch by VeSeeker
         downloads:
           - {label: Mod, url: "http://deadlystream.com/files/file/971-refurbished-astromech-droids/"}
+          - {label: Switch Patch, url: "https://www.mediafire.com/file/ovd9ttxt0bfiq7b/HD_Astromechs_Switch_Patch.zip/file"}
         method: ["Loose-file"]
+        install: |
+          Install the main mod, then move the files in the Switch Patch into override.
 
       - id: war-droid-hd
         type: mod
@@ -696,6 +751,8 @@ sections:
         downloads:
           - {label: Mod, url: "http://deadlystream.com/files/file/321-improved-peragus-asteroid-fields/"}
         method: ["Loose-file"]
+        install: |
+          Delete or fix EBO_Astr. See {{ref:texture-outlines}}
 
       - id: swoop-monitor-replacement
         type: mod
@@ -752,6 +809,8 @@ sections:
         downloads:
           - {label: Mod, url: "https://deadlystream.com/files/file/1217-jcs-citadel-station-backdrop/"}
         method: ["Loose-file"]
+        download_instructions: |
+          2k version
 
       - id: hq-skyboxes-ii
         type: mod
@@ -763,6 +822,8 @@ sections:
         download_instructions: |
           Download just the main file (HQSkyboxesII_TSL.7z or HQSkyboxesII_TSL_1k.7z), not any of the compatches. Whether you use the 1k version is your choice or not; on older systems, the 1k version will give better performance.
         install: |
+          Needs `/Modules/401dxn.rim` from the game dump.
+
           After this mod has finished installing, if you are using the K2CP, extract the K2CP once again—do not re-run its TSLPatcher! Open the TSLPatchdata folder and move 231teld.mdl and 231teld.mdx to your override, and overwrite when prompted.
 
       - id: ebon-hawk-cockpit-upgrade-i
@@ -822,6 +883,8 @@ sections:
         downloads:
           - {label: Mod, url: "https://www.nexusmods.com/kotor2/mods/1161?tab=description"}
         method: ["Loose-file"]
+        install: |
+          This changes the textures correctly, but it isn't animated. See {{ref:animated-uv-map}}
 
       - id: aleema-ketos-robe-fix
         type: mod
@@ -906,6 +969,8 @@ sections:
         downloads:
           - {label: Mod, url: "https://deadlystream.com/files/file/1228-kreias-fall-cutscene-in-game/"}
         method: ["TSLPatcher"]
+        install: |
+          {{ref:tslpatcher}}. Convert mus_a_kremov.mp3 to .wav (thanks to FTD's comment on deadlystream)
 
       - id: partyswap
         type: mod
@@ -919,11 +984,14 @@ sections:
 
       - id: extended-enclave
         type: mod
-        title: Extended Enclave
-        author: danil-ch & Darth Hayze
+        title: Extended Enclave & Switch Patch
+        author: danil-ch & Darth Hayze, Switch Patch by VeSeeker
         downloads:
           - {label: Mod, url: "http://deadlystream.com/files/file/428-extended-enclave-tslrcm-add-on/"}
+          - {label: Switch Patch, url: "https://www.mediafire.com/file/b5ny7hk4mf9e2ch/Extended_Enclave_Switch_Patch.zip/file"}
         method: ["TSLPatcher"]
+        install: |
+          {{ref:tslpatcher}}: rcmchanges.ini. Install the main mod, then extract the .bik file from the Switch patch into `/K2romfs/Movies` and overwrite.
 
       - id: partyswap-ee-compatch
         type: mod
@@ -942,6 +1010,8 @@ sections:
         downloads:
           - {label: Mod, url: "http://deadlystream.com/files/file/250-extended-korriban-arrival/"}
         method: ["TSLPatcher"]
+        install: |
+          Needs `Localized/<language>/lips/003EBO_loc.mod` from the Switch game dump in `K2romfs/lips`.
 
       - id: prologue-item-recovery
         type: mod
@@ -1154,6 +1224,8 @@ sections:
         downloads:
           - {label: Mod, url: "http://deadlystream.com/files/file/218-quarterstaff-replacement-pack/"}
         method: ["TSLPatcher"]
+        install: |
+          {{ref:tslpatcher}}
 
       - id: upscaled-icon-overhaul
         type: mod
@@ -1391,7 +1463,7 @@ sections:
           - {label: Mod, url: "https://deadlystream.com/files/file/2660-4x-upscale-character-textures-model-fixes-tsl/"}
         method: ["Loose-file"]
         download_instructions: |
-          Strongly recommend the 2x .tpc version; the fidelity loss for 2x is minimal, .tpc is a lossless conversion and is much slimmer in filesize, and the automated compatibility program for this mod relies on the filetype being .tpc to function.
+          2x .tpc version
         install: |
           If you are on a system which can run .bat files, I strongly recommend using the automated system to deal with compatibility for this mod. To do so, first extract redrob's mod from its archive, then enter the "TSL Optional Kreia Model" folder, copy the four model files within, paste them into the "Copy contents to TSL's Override folder" and overwrite. After this, navigate to [this page](https://github.com/KOTOR-Community-Portal/mod-builds/blob/main/scripts/cleaner.bat) and click on the button with the arrow pointing down at the top of the code list (the one which says "download raw file"). Place cleaner.bat in the folder from redrob's mod called "Copy contents to TSL's Override folder", then go to [here](https://github.com/KOTOR-Community-Portal/mod-builds/blob/main/scripts/cleanlist_k2.txt) and repeat the same step, placing cleanlist_k2.txt in the same location. You can now run cleanlist.bat: follow the instructions onscreen, selecting whether you did or didn't use any of the given mods (note that the first thing it will ask you is whether you've installed "Mandatory Deletions"; rather than a mod, this is a required step to delete files that need to be removed regardless of what mods you're using, so just approve it). The batch file will automatically delete the incompatible files based on which mods you select that you've used in your install. Once you reach the end of the list, you can exit the .bat window, delete cleaner.bat and cleanlist_k1_sf.txt, and then move the remaining files in the folder to your override. If you cannot run .bat files or feel uncomfortable running this file, you will need to manually delete the files yourself, following the instructions [here](https://github.com/KOTOR-Community-Portal/mod-builds/blob/main/content/k2/redrob_deletionsk2.md).
 
@@ -1407,33 +1479,33 @@ sections:
 
       - id: k2-cutscenes-rescaled
         type: mod
-        title: K2 Cutscenes Rescaled
+        title: ~~K2 Cutscenes Rescaled~~
         author: Pops Maellard
         downloads:
           - {label: Mod, url: "https://deadlystream.com/files/file/2503-k2-cutscenes-rescaled/"}
         method: ["Loose-file"]
-        download_instructions: |
-          Choose the resolution option which most closely fits your monitor's screen size during the download process. If using TSLRCM or Extended Enclave, download both the main file most closely corresponding to your monitor resolution as well as the file of the same resolution with "_mods" appended to the filename (for instance, k2rs_30fps_1920x1080.7z and k2rs_30fps_mods_1920x1080.7z).
         install: |
-          When installing, there will be several optional files based on how dialogue in cutscenes are displayed (floating text or not, etc). Which of these you choose is your preference; use the mod screenshots to determine. Install the main module first, then open the "mods" version of the file and apply the upscaled cutscenes for any mods which you use from the main build list. Bear in mind that the files from this mod go in your movies folder, not override. If you experience issues with the game minimizing during cutscenes, it might be necessary to go to [this video](https://www.youtube.com/watch?v=l7euNu1Tt5E) and follow the instructions to use RAD tools to "upscale" the cutscenes to match your exact resolution, though I have not personally attempted this so I don't know how much time it would take to complete. I would estimate around 8 hours, which is the typical time it takes for the native movies to be scaled to 1920x1080 using the same system, but remember that this would be a fully-automated process.
+          The Switch version has 1080p upscaled versions of the cutscenes already
 
       - id: k2-remastered-cutscenes
         type: mod
-        title: K2 Remastered Cutscenes
+        title: ~~K2 Remastered Cutscenes~~
         author: naelavok
         downloads:
           - {label: Mod, url: "https://www.nexusmods.com/kotor2/mods/1066/"}
         method: ["Loose-File Components, possible .bat patcher"]
         install: |
-          Use only Pops Maellard's cutscenes or this version by naelavok. To install, choose the resolution option which most closely fits your monitor's screen size during the download process. Bear in mind that the files from this mod go in your movies folder, not override. If you experience issues with the game minimizing during cutscenes, it might be necessary to go to [this video](https://www.youtube.com/watch?v=l7euNu1Tt5E) and follow the instructions to use RAD tools to "upscale" the cutscenes to match your exact resolution, though I have not personally attempted this so I don't know how much time it would take to complete. I would estimate around 8 hours, which is the typical time it takes for the native movies to be scaled to 1920x1080 using the same system, but remember that this would be a fully-automated process.
+          The Switch version has 1080p upscaled versions of the cutscenes already
 
       - id: loading-screen-rescaled
         type: mod
-        title: Loading Screen Rescaled
+        title: ~~Loading Screen Rescaled~~
         author: Pops Maellard
         downloads:
           - {label: Mod, url: "https://deadlystream.com/files/file/2622-k2-loading-screen-rescaled/"}
         method: ["Loose-file"]
+        install: |
+          The Switch version has 1080p upscaled versions of the cutscenes already
 
       - id: workbench-camera-tweak
         type: mod
@@ -1451,15 +1523,126 @@ sections:
           - {label: Mod, url: "https://www.nexusmods.com/kotor2/mods/1086"}
         method: ["Loose-file"]
 
-  - id: issues
+      - id: infinite-buzzing-fix
+        type: mod
+        title: Infinite Buzzing Fix
+        author: Stellar
+        downloads:
+          - {label: Mod, url: "https://gbatemp.net/threads/knights-of-the-old-republic-ii-switch-modding.635861/"}
+        method: ["Loose-file"]
+        install: |
+          Extract the files into override
+
+      - id: ips-patches
+        type: mod
+        title: IPS Patches
+        author: VeSeeker
+        downloads:
+          - {label: Mod, url: "https://github.com/VeSeeker/switch-kpm-ips-patches"}
+        method: ["Loose-file"]
+        install: |
+          These are executable patches for the Switch, based on the [KPM](https://github.com/LaneDibello/Kotor-Patch-Manager) patches. You need to use **I haven't finished this patch yet!** `K2AspyrFogReflectionFix`. Other than that, you are free to pick and choose which patches you want to use. At a minimum, I strongly suggest using `AnimatedTextureFix` and `K2AspyrColorCorrection`. I haven't finished porting many patches to the Switch as of yet, I will update this guide when I have ported all of them. To install a patch, you will move the patch **folder** to `atmosphere/exefs_patches/<patchName>/<BID>.ips` on your Switch. Do not put patches into override, or anywhere in `K2romfs`, it will not do anything.
+
+  - id: finalizing
+    title: Finalizing
+    children:
+      - id: finishing-up
+        title: Finishing Up
+        body: |
+          Run `ksmt finalize 2`. **Add responses to each YesNo prompt**.
+          This should leave you with the folder `kotor-switch-modding-tool/0100B2C016252000`. Connect your Switch (or sd card) to your computer and navigate to `atmosphere/contents`. If there is already a `0100B2C016252000` folder, delete it, and then move the finalized `0100B2C016252000` from the modding tool. The file structure should be: `atmophere/contents/0100B2C016252000/`.
+
+          Don't forget to move IPS patches to `atmosphere/exefs_patches/`!
+
+      - id: final-thoughts
+        title: Final Thoughts
+        body: |
+          Be aware that adding these mods increases load times by a bit. It's not unbearable, but it is noticeable.
+
+          I'm pretty happy with this build. I'll continue to update it as I make more IPS patches. I'll also try to keep it up to date with neocites.
+
+  - id: bugs-issues-extras
     title: Bugs, Issues, & Extras
     children:
       - id: vram
         title: Out of VRAM
+        body: |
+          When you have too many high quality textures, the Switch runs out of the VRAM pool of it's unified memory. Most commonly, this results in a crash during a loading screen. Rarely, you will be in an area, and new textures that would load in are invisible, and then you crash. The solution is just to downscale some of the textures. We end up getting pretty close to the limit in some modules.
+
+          **Add screenshot**
         children:
           - id: extra-downscales
             title: Extra Downscales
+            body: |
+              Below is a list of models where I crashed, so I picked a few textures in that module to downscale. These are all downscaled automatically by my modding tool, so the lists below are mostly just for my reference. If you run out of VRAM in a module, let me know so I can add it to the list.
             children:
-              - id: lower-city
-                title: Lower city apartments
-                body: Consistent crash
+              - id: peragus-mining-tunnel
+                title: Peragus Mining Tunnel
+                body: |
+                  Where'd my face go? Downscaling: PER_Cl01, PER_Gr02, PER_wl01
+              - id: telos-entertainment-module
+                title: Telos Entertainment Module
+                body: |
+                  Inconsistent crash. Downscaling: TEL_Stl3-7
+              - id: nar-shaddaa-refugee-landing-pad
+                title: Nar Shaddaa Refugee Landing Pad
+                body: |
+                  Inconsistent crash. Downscaling: NAR_cr8, NAR_fl04, NAR_wl01, NAR_wl10
+
+      - id: texture-outlines
+        title: Texture Outlines
+        body: |
+          Some textures have weird either white outlines as with the Dantooine leaf textures, or alpha outline problems, as with some ground decals on Peragus, and many others.
+
+          Many of these problems have actually been reported as bugs on nexus mods, and the mod creator said that they fixed them, so I really don’t know why the Switch still experiences the problem.
+
+          Reading the bug reports, some people have seemingly fixed these on their own by downloading the .tga version and converting the suspect files to .tpc themselves. Something about batch converting messing with the type of compression used. You are welcome to try this, but I couldn’t get it to work.
+
+      - id: model-problems
+        title: Model Problems
+        body: |
+          Some model have some.. issues. See below. No idea what causes it, so I just delete the necessary model files.
+          
+          **Add screenshot**
+
+      - id: flickering-textures
+        title: Flickering Textures
+        body: |
+          Sometimes models flicker wildly. This is because the modded textures are arrays of images the game is supposed to cycle through (also known as an animated texture). This works for tons of basegame and modded textures, but for whatever reason the game doesn’t like a few specific ones, so my solution is just to take the first frame of the cycle and set that as the texture. I do this automatically for the modded textures where this is a problem with the modding tool. (This change affects these mods: {{ref:hd-sign-placeable}}, {{ref:hd-kiosk}}, {{ref:hd-desk}}, {{ref:hd-terminal-texture}}, {{ref:hd-workbench}}). Kind of sucks because the textures are no longer animated, but neither were the basegame ones, so now at least we have upscaled versions.
+
+      - id: animated-texture-problem
+        title: Animated Texture Problem
+        body: |
+          On the Switch, animated textures aren't, well, animated. Some are never animated, and some are only animated if you are sufficiently far away from them. There are three reasons for this problem:
+
+        children:
+          - id: missing-txi
+            title: Missing .txi
+            body: |
+              The first is simply that the modded animated textures come as .tga files without .txis. I’m guessing on the PC version, the original animated textures are in .tga and have a .txi in the basegame files, so modders didn’t need to include the .txi and it still works. We need the .txi files though because we have to convert them to .tpc. I fixed this by getting the .tpc from the dumped Switch game files and providing the .txi files in patches.
+
+          - id: mipmap
+            title: Mipmap 0 Animation
+            body: |
+              The second problem was very annoying to figure out. Basically, the highest quality mipmap level is not animated on the Switch. So if a texture's mipmap was set to 0, then it was always static, and if it was set to 1, it was animated until you got close enough to it, and then it would be come static. [Here](https://youtu.be/CmlEmN5rivw) is a video showing this.
+
+              Thankfully, the AnimatedTextureFix in {{ref:ips-patches}} fixes this, so animated textures work exactly the same as the do on PC.
+
+          - id: animated-uv-map
+            title: Animated UV Map
+            body: |
+              The third problem is with animated UV maps. From what I can tell these just don't work at all of the Switch version. The most obvious one is the FTL texture on the Ebon Hawk.
+
+              I'm going to look into patching this with an IPS patch. If that isn't possible, I'll make a new FTL texture that uses cycle texture so that it is animated.
+
+      - id: garbled-icons-textures
+        title: Garbled Icons & Textures
+        body: |
+          Some of the mods provide updated icons for items in the game. If those images aren't a power of 2 resolution (64x64, 128x128, etc.), they end up looking weird and garbled. The fix is to resize them to be a power of 2 resolution. This is done automatically with the modding tool.
+
+          **Add screenshot here**
+
+      - id: aspyr-patch
+        title: Aspyr Patch
+        body: |
+          If you read the critical warning in the neocities guide, you might have wondered what version of Kotor 2 the Switch version is. It is the Aspyr patch. We can't use the 3C-FD Patcher like the PC mod build, but I am porting the Aspyr patch patches to IPS patches. These are mostly complete.

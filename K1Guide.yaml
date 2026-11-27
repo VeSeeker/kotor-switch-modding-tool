@@ -32,8 +32,6 @@ sections:
     children:
       - id: tools
         title: Tools
-        body: |
-          This is the tools body
         children:
           - id: ksmt
             title: Kotor Switch Modding Tool
@@ -1889,7 +1887,7 @@ sections:
 
       - id: main-menu-widescreen-fix
         type: mod
-        title: Main Menu Widescreen Fix
+        title: ~~Main Menu Widescreen Fix~~
         author: DarthParametric
         downloads:
           - {label: Mod, url: "https://deadlystream.com/files/file/1173-k1-main-menu-widescreen-fix/"}
@@ -1913,9 +1911,10 @@ sections:
         author: naelavok
         downloads:
           - {label: Mod, url: "https://www.nexusmods.com/kotor/mods/1306"}
-        method: ["Loose-file with Possible Hex Editing Requirements"]
+        method: ["Loose-file"]
         install: |
           The Switch version has 720p upscaled versions of the cutscenes already. I tried adding the 1080p versions, but the audio becomes choppy. Just skip these
+
       - id: ips-patches
         type: mod
         title: IPS Patches

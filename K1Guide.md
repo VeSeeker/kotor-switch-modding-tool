@@ -28,8 +28,6 @@ Finally, many mods use the TSLPatcher. Sometimes, this patcher is set to automat
 
 ### 2.1 Tools
 
-This is the tools body
-
 #### 2.1.1 Kotor Switch Modding Tool
 
 Download [here](https://github.com/VeSeeker/kotor-switch-modding-tool). This is a really cool tool that I wrote. It is a rewrite of DrSnuggly's [kotor-ii-switch-modding](https://github.com/DrSnuggly/kotor-ii-switch-modding). It's a bit faster, includes automatic downscaling, and *should* work on Windows, Mac, and Linux.
@@ -46,7 +44,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** jacqylfrost
 - **Download:** [Mod](https://deadlystream.com/files/file/2103-kotor-switch-texture-restoration)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Extract the texture files into override, not a subfolder.
 
 ---
@@ -54,7 +52,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** VeSeeker
 - **Download:** [Mod](https://deadlystream.com/files/file/3074-kotor-1-ui-and-icon-upscale-for-nintendo-switch/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Extract the textures in both folders into override.
 
 ---
@@ -62,7 +60,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Salk & Kainzorus Prime
 - **Download:** [Mod](https://deadlystream.com/files/file/1313-kotor-dialogue-fixes/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Move one of the `dialog.tlk` files into `K1romfs/`, not override.
 
 ---
@@ -70,7 +68,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** jonathan7, patch by A Future Pilot
 - **Download:** [Mod](http://deadlystream.com/files/file/349-character-start-up-change/) [Patch](https://mega.nz/file/sRw1GBIK#J8znLBwR6t7ZvZnpQbsUBYcUNfPCWA7wYNW3qU6gZSg)
-- **Method:** TSLPatcher, Loose-file\
+- **Method:** TSLPatcher, Loose-file
 **Installation instructions:** Run TSLPatcher first, then copy the loose files into override.
 
 ---
@@ -84,7 +82,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** JCarter426
 - **Download:** [Mod](https://deadlystream.com/files/file/1333-jcs-minor-fixes-for-k1/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Move everything from 'Straight Fixes', 'Resolution Fixes', and 'Aesthetic Improvements' into override. From 'Things what bother me' skip N_AdmrlSaulKar.mdl, N_AdmrlSaulKar.mdx, N_SithComF.mdl, N_SithComF.mdx, N_SithComM.mdl, and N_SithComM.mdx. Skip the 'Bugfix' folder.
 
 ---
@@ -92,7 +90,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Silveredge9, Patch by Future Pilot
 - **Download:** [Mod](https://deadlystream.com/files/file/824-ajunta-pall-unique-appearance/) [Patch](https://mega.nz/file/McJF1AIC#Jywhu6zXWCRz4gRghxMxoBAWrbU_A3giD1INsOoHqmA)
-- **Method:** TSLPatcher, Loose-file\
+- **Method:** TSLPatcher, Loose-file
 **Installation instructions:** Install the patch first. Then move the files in either the 'Transparent' or 'Non-Transparent' folder into override. You can optionally move the 'Sith eyes' files into override as well.
 
 ---
@@ -106,7 +104,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** GearHead
 - **Download:** [Mod](https://deadlystream.com/files/file/2456-kotor1-droid-claw-fix/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** [2.1.2 TSLPatcher automatic installation detection](#212-tslpatcher-automatic-installation-detection)
 
 ---
@@ -114,7 +112,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Ashton Scorpius
 - **Download:** [Mod](https://deadlystream.com/files/file/1426-k1-ported-alien-vo-replacements/)
-- **Method:** HoloPatcher\
+- **Method:** HoloPatcher
 **Installation instructions:** Install the main mod, then re-run the patcher and select the K1CP compatibility install options if using [3.8 KOTOR Community Patch & Patch](#38-kotor-community-patch--patch)
 
 ---
@@ -122,7 +120,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** ShiningRedHD
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1367) [Patch](https://mega.nz/file/NEpH3AoZ#5RVfQHjkdk6b3lgcJzgitpCb1YQlfYqhTM0XF3Z9LMM)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Download the `.tpc` version\
 **Installation instructions:** Delete or fix `LKO_blast01`, `LKOa_blast1`. See [5.2 Texture Outlines](#52-texture-outlines)
 
@@ -131,14 +129,14 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** ShiningRedHD
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1365)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Download the `.tpc` version\
 ---
 ### 3.13 Ultimate Tatooine
 
 - **Author:** ShiningRedHD
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1364)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Download the `.tpc` version\
 **Installation instructions:** Delete or fix `LTA_blas01`. See [5.2 Texture Outlines](#52-texture-outlines)
 
@@ -147,7 +145,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** ShiningRedHD
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1368)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Download the `.tpc` version\
 **Installation instructions:** Delete or fix `LDA_leaf01`, `02`, and `04`. See [5.2 Texture Outlines](#52-texture-outlines)
 
@@ -156,21 +154,21 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** ShiningRedHD
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1370)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Download the `.tpc` version\
 ---
 ### 3.16 Ultimate Manaan
 
 - **Author:** ShiningRedHD
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1366)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Download the `.tpc` version\
 ---
 ### 3.17 Ultimate Taris
 
 - **Author:** ShiningRedHD
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1360)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Download the `.tpc` version\
 **Installation instructions:** Delete `LSI_win01.tpc` and `LSI_box01.tpc` before moving to override
 
@@ -179,14 +177,14 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** ShiningRedHD
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1282)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Download only the 2x `.tpc` version\
 ---
 ### 3.19 Ultimate Unknown World
 
 - **Author:** ShiningRedHD
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1369)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Download the `.tpc` version\
 **Installation instructions:** Delete `LUN_blst01.tpc` and `LUN_blst02.tpc` before moving to override. Delete or fix `LUN_blst01`, `02`, `LUN_rocky2`, `LUN_sand02`. See [5.2 Texture Outlines](#52-texture-outlines)
 
@@ -195,7 +193,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** MessesWithWolves
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1632)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Download and install both files.\
 ---
 ### 3.21 Duncan on Manaan
@@ -214,7 +212,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** CarthOnasty
 - **Download:** [Mod](https://deadlystream.com/files/file/1361-hd-pazaak-cards/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Move all the loose files to override. If you'd like Kotor 2-style specialty cards (green-colored), move the files from the "green" folder to the override folder as well.
 
 ---
@@ -264,7 +262,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Emperor Turnip
 - **Download:** [Mod](https://deadlystream.com/files/file/1190-emperor-turnips-hd-gizka/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** The file has the wrong readme; move all the files in the Creatures folder, except for the readme and Gizka.jpg (any .jpg/.png files are always previews and can be deleted), to the override.
 
 ---
@@ -296,14 +294,14 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Etienne76
 - **Download:** [Mod](https://deadlystream.com/files/file/2514-hd-realistic-sand-people/) [Patch](https://mega.nz/file/1ApXxLgY#iAK97Ydx2xvH5ws7NevJGU3ZJQarhBwDAIFcH73O3W4)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** For this mod, download the `.tga` filetype version (not the `.tpc`).\
 ---
 ### 3.37 Better Twi'lek Heads
 
 - **Author:** Ashton Scorpius
 - **Download:** [Mod](https://deadlystream.com/files/file/1430-k1-better-twilek-male-heads/)
-- **Method:** HoloPatcher\
+- **Method:** HoloPatcher
 **Installation instructions:** Choose whether to use the slim or original necks; your preference.
 
 ---
@@ -311,14 +309,14 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Dark Hope
 - **Download:** [Mod](http://deadlystream.com/files/file/982-hd-twilek-female/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Download the 'hd_twilek_female.rar' file, and ignore the other versions.\
 ---
 ### 3.39 Thigh-High Boots for Twi'lek
 
 - **Author:** DarthParametric
 - **Download:** [Mod](http://deadlystream.com/files/file/1087-k1-thigh-high-boots-for-female-twilek-body-modders-resource/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Unzip the mod, enter the NPC Replacement folder, and move the six files within (NOT including the optional folder or its contents) to the override.
 
 ---
@@ -338,7 +336,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Dark Hope
 - **Download:** [Mod](https://deadlystream.com/files/file/980-hd-darth-malak/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Do not download the .tga file.\
 **Installation instructions:** If intending to use CineMalak below (recommended!), select your preferred head texture from the Malak (Red Eyes) or Malak (Blue Eyes) folders and move the files within to your override. You can ignore N_DarthMalak01.tga, unless you do not want to use CineMalak, in which case you should also move it to your override.
 
@@ -347,7 +345,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** PoopaPoppaPalpatine
 - **Download:** [Mod](https://deadlystream.com/files/file/2787-cinemalak-hd-malak-retexture/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** The downloaded file is a loose .tga, not inside an archive. For this mod, just move the downloaded file (N_DarthMalak01.tga) to your override directly.
 
 ---
@@ -355,7 +353,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Detran
 - **Download:** [Mod](https://deadlystream.com/files/file/2350-detrans-darth-revan/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Make a copy of the file and rename it PMBJ01.tga, then move all files to override.
 
 ---
@@ -375,7 +373,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Sdub, Switch Patch by VeSeeker
 - **Download:** [Mod](https://deadlystream.com/files/file/1909-random-hd-ui-elements/) [Switch Patch](https://www.mediafire.com/file/yufzempfpbom5vr/Random_HD_UI_Elements_Switch_Patch.zip/file)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Download just the random UI elements download, not the optional T3-M4 request.\
 **Installation instructions:** Install the Planet Icons from the main mod, and then move the Switch Patch into override
 
@@ -384,7 +382,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** ndix UR
 - **Download:** [Mod](https://deadlystream.com/files/file/1213-hd-npc-portraits/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Download the V2 option.\
 **Installation instructions:** Ignore the 'V1 Looks' option.
 
@@ -393,7 +391,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Dark Hope
 - **Download:** [Mod](https://deadlystream.com/files/file/2516-npc-clothing-m/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Ignore the txi.rar file.\
 **Installation instructions:** Delete n_commm07.tga and N_CommMD01.tga. Delete N_CommM08.tga, then make a copy of N_CommM0801 and paste it in the same directory. This should create a duplicate file; rename that duplicate file to "N_CommM08.tga" and then move all files to override.
 
@@ -402,7 +400,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Stormie97, Patch by JCarter
 - **Download:** [Mod](https://deadlystream.com/files/file/1669-juhani-appearance-overhaul/) [Patch](https://mega.nz/file/wM5hwA7Z#tbwFY3_kU2oR_AcKl879tCOlyC_i-cUtqb_HXak3lBU)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** ~~Use the Body & Lightsaber version, we will use a different head model. Make sure to install the patch after, it fixes an issue with her lightsaber which can cause it to disappear.~~ Avoid unless you can figure out this bug: [5.3 Model Problems](#53-model-problems)
 
 ---
@@ -416,7 +414,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** JCarter426
 - **Download:** [Mod](https://deadlystream.com/files/file/1293-jcs-korriban-back-in-black-for-k1/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** If running the Community Patch (you should be), install the Community Patch-Compatible install option; otherwise, select Basic. If you would like Master Uthar or Yuthura Ban (the two top Sith at the academy) to wear alternate outfits instead of robes, re-run the patcher to select your preferred options AFTER running the initial install.
 
 ---
@@ -424,7 +422,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** JCarter426
 - **Download:** [Mod](https://deadlystream.com/files/file/1378-jcs-fashion-line-i-cloaked-jedi-robes-for-k1/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** When installing, use the screenshots provided to determine which robe style you would like to use. Aesthetically, I strongly recommend the Brown-Red-Blue Alternative.
 
 ---
@@ -432,7 +430,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** JCarter426
 - **Download:** [Mod](https://deadlystream.com/files/file/1477-jcs-jedi-tailor-for-k1/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** If you use Cloaked Jedi Robes's 100% Brown option, make sure to install the 100% Brown compatibility patch after the main mod installation (re-run the executable).
 
 ---
@@ -440,7 +438,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** PapaZinos
 - **Download:** [Mod](https://deadlystream.com/files/file/2357-robes-with-shadows-for-k1-jcs-port/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Only move the files from "Jedi Robes Override".
 
 ---
@@ -454,7 +452,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Quanon
 - **Download:** [Mod](http://deadlystream.com/files/file/1001-quanons-hk-47-reskin/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Delete PO_phk47.tga before moving the two other files to the override.
 
 ---
@@ -468,7 +466,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Dark Hope, patch by Marius Fett
 - **Download:** [Mod](https://deadlystream.com/files/file/2277-kiosk-hd/) [Patch](https://deadlystream.com/files/file/2909-kiosk-model-fix-for-k1/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Download the "Kiosk HD 15.03.2024" version.\
 ---
 ### 3.60 HD Desk
@@ -499,7 +497,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Dark Hope, Switch Patch by VeSeeker
 - **Download:** [Mod](https://deadlystream.com/files/file/2430-stunbaton-hd/) [Switch Patch](https://www.mediafire.com/file/01zojm92663bs8x/HD_Stun_Batons_Switch_Patch.zip/file)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Unless you want icons like those in the preview images (which I recommend against, as it will not match the vanilla aesthetic for most of the other equipment icons in the game), do not download the "stunbaton 2025" file; only download "Stun baton HD".\
 **Installation instructions:** Install the main mod, and then move the file from the Switch Patch into override
 
@@ -514,7 +512,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Dark Hope
 - **Download:** [Mod](https://deadlystream.com/files/file/2382-ithorian-hd/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Choose between the base install and the Vurt retexture based on your preference. The preview screenshots at the top of the page are the base install, the spoilered screenshots at the bottom of the mod description are the modified Vurt versions.\
 ---
 ### 3.67 HD Duros
@@ -545,7 +543,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Dark Hope
 - **Download:** [Mod](https://deadlystream.com/files/file/2471-kebla-yurt-hd/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Delete N_CommF02.tga & .txi before moving to override.
 
 ---
@@ -565,7 +563,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Dark Hope
 - **Download:** [Mod](https://deadlystream.com/files/file/1894-astromech-droid-hd/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Delete po_pt3m33.tga before moving the files to your override.
 
 ---
@@ -585,7 +583,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Dark Hope
 - **Download:** [Mod](https://deadlystream.com/files/file/1133-hd-carth-onasi/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Download the file "Carth Onasi (new clothes).rar", unless you like the head & face changes the mod makes.\
 **Installation instructions:** Delete PO_pcarth3.tga before moving the other files to the override.
 
@@ -594,14 +592,14 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Dark Hope
 - **Download:** [Mod](http://deadlystream.com/files/file/1123-hd-canderous-ordo/) [Patch](https://mega.nz/#!dFJBEYhA!FY9h6AmYVDizyVPZo_I3vXqAIWVrK1TUzT42msGqtpQ)
-- **Method:** Loose-file & Patch\
+- **Method:** Loose-file & Patch
 **Download instructions:** Download only the version marked 'new clothes,' which includes both clothing and body textures. We get our head texture from the below mod. Remember to also download the patch.\
 ---
 ### 3.79 Quanon's Canderous
 
 - **Author:** Quanon
 - **Download:** [Mod](http://deadlystream.com/files/file/941-quanons-canderous-ordo-reskin/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Move only P_CandH01.tga to your override.
 
 ---
@@ -615,7 +613,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Fenharel
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1192)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Download the default, not the iconic recolor.\
 **Installation instructions:** Move ONLY P_joleeh01.tga and P_joleeh01.txi to your override.
 
@@ -624,7 +622,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Dark Hope
 - **Download:** [Mod](https://deadlystream.com/files/file/2031-zaalbar-hd/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Personally recommend against the "ZaalbarHD (Vurt's KotOR Visual Resurgence)" version. It's a larger texture which I personally think looks worse.\
 **Installation instructions:** Delete po_pzaalbar3.tga before moving the files to your override.
 
@@ -633,7 +631,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Heyorange, Sith Holocron, JCarter426
 - **Download:** [Mod](https://deadlystream.com/files/file/2808-heyoranges-sith-uniform-reformation-revised/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** When installing, select the Community Patch-compatible installation, if using the K1CP (you should be). Ignore the other install options.
 
 ---
@@ -641,7 +639,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** /u/Tinman888
 - **Download:** [Mod](https://deadlystream.com/files/file/1929-stylized-portraits-by-tinman888/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Strongly recommend the Lite version—the quality difference is not noticeable, but the filesize footprint of the large versions is huge and could contribute to load errors in multiple modules. Do not install the files from the "PC" folder unless you want your character's portrait appearance to be that of Revan.
 
 ---
@@ -649,7 +647,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Carth0nasty, Switch Patch by VeSeeker
 - **Download:** [Mod](https://deadlystream.com/files/file/1262-star-map-revamp/) [Switch Patch](https://www.mediafire.com/file/ktsbj636fj97qw8/Star_Map_Revamp_Switch_Patch.zip/file)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Install the main mod, and then move the file from the Switch Patch into override.
 
 ---
@@ -657,7 +655,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Dark Hope
 - **Download:** [Mod](https://deadlystream.com/files/file/1125-hd-kt-400-military-droid-carrier-and-lethisk-class-armed-freighter/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Download the "hd_kt_400_military_droid_carrier_and_lethisk_class_armed_freighter.rar" option.\
 ---
 ### 3.87 Kebla Yurt Renovation
@@ -670,7 +668,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Vurt
 - **Download:** [Mod](https://www.gamefront.com/games/knights-of-the-old-republic/file/vurt-s-k1-hi-res-ebon-hawk-retexture)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Once the mod is extracted, copy the file 'LDA_EHawk01' and make a duplicate of it. Rename this duplicate to 'M36_EHawk01.tga' and then move all files to the override.
 
 ---
@@ -678,7 +676,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** PapaZinos
 - **Download:** [Mod](https://deadlystream.com/files/file/2036-ultimate-ebon-hawk-repairs-for-k1/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Move the files from "to override" to your override folder, then also move the files from the "Animated Monitors" folder and overwrite when prompted.
 
 ---
@@ -686,14 +684,14 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Sithspecter
 - **Download:** [Mod](http://deadlystream.com/files/file/938-high-quality-cockpit-skyboxes/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Download the small version\
 ---
 ### 3.91 Yavin Station Hangar
 
 - **Author:** WildKarrde
 - **Download:** [Mod](https://deadlystream.com/files/file/2068-yavin-station-hangar/)
-- **Method:** TSLPatcher & Loose-file with SITUATIONAL Patch (see Installation Instructions!)\
+- **Method:** TSLPatcher & Loose-file with SITUATIONAL Patch (see Installation Instructions!)
 **Installation instructions:** If you would like the forcefield for the hangar to be visible, re-run the installer after installing the main option and also install the visible forcefield option. If using HQ Cockpit Skyboxes, move the files from the resolution folder corresponding to the HQ Cockpit Skyboxes size you utilized to your override, then delete ebo_yab.tga, ebo_yaf.tga, ebo_yal.tga, ebo_yar.tga and ebo_yat.tga from your override. Finally, if you utilize Vurt's "K1 Hi-Res Ebon Hawk Retexture," download [this patch](https://mega.nz/file/QAhhFTzD#rxS91pehFgNP7xFh3DNnNFC1d_YelF43K4-q6mh8xfI) and move its contents to your override.
 
 ---
@@ -707,7 +705,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Sith Holocron
 - **Download:** [Mod](https://deadlystream.com/files/file/2247-ebon-hawk-cockpit-upgrade-leh_scre02/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Recommend the version without overlays, but it's personal preference.
 
 ---
@@ -715,7 +713,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Quanon, patch by JCarter426
 - **Download:** [Mod](http://www.nexusmods.com/kotor/mods/10/) [Patch](https://mega.nz/file/8MogRKIa#NKl_vTrTMQiAPtjNZ4chvsaw6aOd_4l-8lC47ODW1Z0)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Don't install the included modifications to the Dantooine Estates or Sith Base, you'll only be installing the contents of Part 1 and Part 2. You will additionally need to delete the following files from the Part 1 folder before moving the mod content to the override folder: LTS_Bsky01.tga, LTS_Bsky02.tga, and (sorted by name) LTS_sky0001.tga through LTS_SKY0005.tga
 
 ---
@@ -723,7 +721,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Kexikus, Switch Patch by VeSeeker
 - **Download:** [Mod](http://deadlystream.com/files/file/491-kotor-high-quality-starfields-and-nebulas/) [Switch Patch](https://www.mediafire.com/file/2rfg9vovbpten5g/High_Quality_Starfields_Switch_Patch.zip/file)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Install the main mod, and then move the file from the Switch Patch into override
 
 ---
@@ -731,7 +729,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Kexikus, patch by CaptainSpoque
 - **Download:** [Mod](https://deadlystream.com/files/file/723-high-quality-skyboxes-ii/) [Patch](https://deadlystream.com/files/file/2796-high-quality-skyboxes-model-fixes-v10/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Unless using one of the mods for which Kex has developed skyboxes (not recommended, as they're almost certainly not compatible with this build) simply download the 'HQSkyboxesII_K1.7z' file.\
 **Installation instructions:** Delete m36aa_01_lm0 through m36aa_01_lm2.tga before moving to the override, then apply the patch. Delete `CM_m02abB.tga`, otherwise you crash in Taris upper city.
 
@@ -740,7 +738,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** WildKarrde
 - **Download:** [Mod](https://deadlystream.com/files/file/2354-ebon-hawk-transparent-cockpit-windows-for-k1/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Apply the main installation, then go into the Compatibility Patches folder and apply the contents of the "Leviathan - K1CP Forcefield" folder (if using K1CP), HQ Skyboxes compatch (if using HQ Skyboxes), and Yavin Station Hangar (if using WildKarrde's Yavin Station Hangar).
 
 ---
@@ -760,7 +758,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Dark Hope, Switch Patch by VeSeeker
 - **Download:** [Mod](https://deadlystream.com/files/file/2193-animated-energy-shields/) [Switch Patch](https://www.mediafire.com/file/a7dwopmivrocajp/Animated_Energy_Shields_Switch_Patch.zip/file)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Install the main mod, and then move the files in the Switch Patch into override
 
 ---
@@ -774,7 +772,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** olegkuz1997
 - **Download:** [Mod](https://deadlystream.com/files/file/2581-revamped-fx/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** I recommend against any of the included optional files.
 
 ---
@@ -782,7 +780,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Dark Hope
 - **Download:** [Mod](https://deadlystream.com/files/file/1925-terminal-texture/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Which version to use is up to you; the first image on the mod page is the version of the texture from the "PLC_CompPnl(Vurt's KotOR Visual Resurgence) 2026.rar" download, the second image is the original download, and the third image is the vanilla terminal texture.\
 ---
 ### 3.104 HD Workbench
@@ -807,7 +805,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Crazy34
 - **Download:** [Mod](https://deadlystream.com/files/file/1846-new_lightsaber_blade_model_k1/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** ~~The mod builds are only tested with the standard install option; other options are untested for compatibility and function. Use at your own risk!~~ Avoid unless you can figure out this bug: [5.7 Reflective Lightsaber Problem](#57-reflective-lightsaber-problem)
 
 ---
@@ -815,7 +813,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Marius Fett
 - **Download:** [Mod](https://deadlystream.com/files/file/2506-darth-malaks-lightsaber-k1/)
-- **Method:** HoloPatcher\
+- **Method:** HoloPatcher
 **Installation instructions:** Avoid unless you can figure out this bug: [5.7 Reflective Lightsaber Problem](#57-reflective-lightsaber-problem)
 
 ---
@@ -823,7 +821,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** JCarter426
 - **Download:** [Mod](https://deadlystream.com/files/file/1271-jcs-blaster-visual-effects-for-k1/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Move everything from the override folder to your game's override directory, unless you would like yellow/green disruptors, in which case those files should be moved from the optional folder after moving all loose files to the override first.
 
 ---
@@ -849,7 +847,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** N-DReW25
 - **Download:** [Mod](https://deadlystream.com/files/file/1090-senni-vek-mod/)
-- **Method:** HoloPatcher\
+- **Method:** HoloPatcher
 **Installation instructions:** For realism I personally recommend the "Senni Vek's Ambush" install, but if you'd like to remain as close to vanilla as possible, choose the Senni Vek Restoration instead.
 
 ---
@@ -857,7 +855,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Leilukin
 - **Download:** [Mod](https://deadlystream.com/files/file/2228-kotor-1-twilek-male-npc-diversity/)
-- **Method:** HoloPatcher\
+- **Method:** HoloPatcher
 **Installation instructions:** Run the installer and install the Main Installation first. Once the main install is completed, select the optional upscaled textures install option and install it, if desired. If using the original necks option of Ashton Scorpius's Better Twi'lek Males mod, also ensure to run the "[Optional] Original Necks" install option. Finally, if using the Senni Vek Mod, ensure to also re-run the installer and select the compatibility patch for whichever version of that mod you've chosen to use (Senni Vek's Ambush or Senni Vek Restoration).
 
 ---
@@ -883,7 +881,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Emperor Devon
 - **Download:** [Mod](https://deadlystream.com/files/file/2428-jedi-choice-dialogue-enhancement/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Move "dan13_dorak.dlg" only.
 
 ---
@@ -927,7 +925,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Dark Hope
 - **Download:** [Mod](https://deadlystream.com/files/file/2409-grenades-and-mines-hd/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Delete "ii_trapkit_001.tga" through "ii_trapkit_004.tga" before installing.
 
 ---
@@ -947,7 +945,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Darth Parametric
 - **Download:** [Mod](https://deadlystream.com/files/file/2097-all-hands-on-deck-for-the-leviathan-prison-break/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** ~~The optional file included in the install is compatible with the builds, and it's your choice to use it or not.~~ Avoid unless you can figure out this bug: [5.8 Camera Placement Bug](#58-camera-placement-bug)
 
 ---
@@ -961,7 +959,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** WildKarrde
 - **Download:** [Mod](https://deadlystream.com/files/file/2284-party-conversations-on-ebon-hawk/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** Use the K1CP compatible install option, if using the K1CP (you should be).
 
 ---
@@ -975,7 +973,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** uwadmin12
 - **Download:** [Mod](https://deadlystream.com/files/file/1487-k1-saber-throw-knockdown-effect/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** [2.1.2 TSLPatcher automatic installation detection](#212-tslpatcher-automatic-installation-detection)
 
 ---
@@ -983,7 +981,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** FallenGuardian
 - **Download:** [Mod](http://deadlystream.com/files/file/324-sunry-murder-recording-ehancement/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** [2.1.2 TSLPatcher automatic installation detection](#212-tslpatcher-automatic-installation-detection)
 
 ---
@@ -991,7 +989,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Leilukin
 - **Download:** [Mod](https://deadlystream.com/files/file/2214-pc-dialogue-with-daviks-slaves-change/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** I personally recommend option 2.
 
 ---
@@ -999,14 +997,14 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** CaptainSpoque
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1666)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Download instructions:** Full or Light version is your choice.\
 ---
 ### 3.136 Manaan Rapid Transit
 
 - **Author:** The_Chaser_One
 - **Download:** [Mod](https://deadlystream.com/files/file/2739-manaan-fast-travel-system/)
-- **Method:** HoloPatcher\
+- **Method:** HoloPatcher
 **Download instructions:** If wishing to use a non-English mod version, download the mod version which matches your language of choice.\
 ---
 ### 3.137 Recruit T3-M4 Early
@@ -1025,7 +1023,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Sithspecter
 - **Download:** [Mod](http://deadlystream.com/files/file/861-high-quality-blasters/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** Extract the mod, navigate to the 'TSLPatchdata' folder, and delete the file 'keblastore.utm'. Run the installer—it will give you a single error, this is intended. After the install has completed, rename the files 'w_ionrfl_04.mdl' and 'w_ionrfl_04.mdx' to 'w_ionrfl_004.mdl' and 'w_ionrfl_004.mdx'. Delete the following files from your override directory: w_rptnblstr_004.mdl, w_rptnblstr_004.mdx, w_blstrpstl_006.mdl, w_blstrpstl_006.mdx and g1_w_rptnblstr01.uti
 
 ---
@@ -1033,7 +1031,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** LDR
 - **Download:** [Mod](https://deadlystream.com/files/file/1878-a-crashed-republic-cruiser-on-a-nameless-world/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** Run the installer to install the mod, then re-run it twice more, once for each of the optional installs, if using Loadscreens in Color/HQ Blasters.
 
 ---
@@ -1053,7 +1051,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** offthegridmorty
 - **Download:** [Mod](https://deadlystream.com/files/file/2379-bastila-has-tsl-battle-meditation/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** [2.1.2 TSLPatcher automatic installation detection](#212-tslpatcher-automatic-installation-detection)
 
 ---
@@ -1061,7 +1059,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** N-DReW25
 - **Download:** [Mod](http://deadlystream.com/files/file/1124-sneak-attack-10-restoration/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** [2.1.2 TSLPatcher automatic installation detection](#212-tslpatcher-automatic-installation-detection)
 
 ---
@@ -1081,7 +1079,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Shem, patch by A Future Pilot & Darth Parametric
 - **Download:** [Mod](http://deadlystream.com/files/file/693-sherruk-attacks-with-lightsabers/) [Patch](https://mega.nz/#!QNImBQSb!OPon0ZYbakcZpxZKMxSp559ezQWFU-wNXJ7Sj3ERBg4)
-- **Method:** TSLPatcher, Loose-File Patch\
+- **Method:** TSLPatcher, Loose-File Patch
 **Installation instructions:** [2.1.2 TSLPatcher automatic installation detection](#212-tslpatcher-automatic-installation-detection). Install the base mod first, then move the file from the patch directly to your override.
 
 ---
@@ -1101,7 +1099,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Revanator
 - **Download:** [Mod](https://deadlystream.com/files/file/1006-bastilas-dark-bodysuit-by-quanon-revanator/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** [2.1.2 TSLPatcher automatic installation detection](#212-tslpatcher-automatic-installation-detection). Use the regular install—other install variants have been linked to sequence breaks, but the normal install variant is fully functional. After installing, delete `P_BastilaBB02.mdl` and `.mdx` from override, see [5.3 Model Problems](#53-model-problems)
 
 ---
@@ -1115,7 +1113,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Thrak Farelle, edited by A Future Pilot
 - **Download:** [Mod](https://drive.google.com/file/d/1NuewBFq390wkZuBkbJzN-mN4sIRlvXGd/view)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** This mod is not a file archive unlike all the other mods you've downloaded, just a single pre-extracted file. When you get the file, just put it directly in your Override folder.
 
 ---
@@ -1129,7 +1127,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** CaptainSpoque
 - **Download:** [Mod](https://deadlystream.com/files/file/2723-k1-swoop-platform-model-repairs/)
-- **Method:** HoloPatcher\
+- **Method:** HoloPatcher
 **Installation instructions:** Which of the three versions is used is up to your preference. Full is the entire package, lite is without the player swoop displayed on the race platform, and ultra lite is without the doors fix.
 
 ---
@@ -1143,7 +1141,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Ebmar
 - **Download:** [Mod](https://deadlystream.com/files/file/1545-k1-temple-main-floor-missing-lamps-fix/)
-- **Method:** Multi-Run TSLPatcher\
+- **Method:** Multi-Run TSLPatcher
 **Installation instructions:** If you have installed the K1CP, install just the pillar facing fix. The lighting fix is already included in the K1CP.
 
 ---
@@ -1151,7 +1149,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** JCarter426, HD Ithorian patch by Sith Holocron
 - **Download:** [Mod](https://deadlystream.com/files/file/2309-jcs-czerka-business-attire-for-k1/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** If using Dark Hope's HD Ithorian texture, also download and apply [this patch](https://mega.nz/file/wUYRUTAD#tE7J08QTc0NSSbG-Xu3cSFsynLVtg7J59BruxOlDnKY), which Sith Holocron was kind enough to make at my request, after installing this mod.
 
 ---
@@ -1159,7 +1157,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** A Future Pilot
 - **Download:** [Mod](https://deadlystream.com/files/file/1289-sith-soldier-texture-restoration/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** [2.1.2 TSLPatcher automatic installation detection](#212-tslpatcher-automatic-installation-detection), `Main/changes.ini`
 
 ---
@@ -1173,14 +1171,14 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** DarthParametric
 - **Download:** [Mod](https://deadlystream.com/files/file/1199-diversified-jedi-captives-on-the-star-forge/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Download instructions:** I recommend the Base install option. If you wish to add these NPCs to Dantooine, you can also install the optional module; just make sure to add the compatibility patch if you're using 'Cloaked Jedi Robes' above.\
 ---
 ### 3.161 Juhani Romance Enhancement
 
 - **Author:** Kexikus
 - **Download:** [Mod](https://deadlystream.com/files/file/772-juhani-romance-enhancement/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** [2.1.2 TSLPatcher automatic installation detection](#212-tslpatcher-automatic-installation-detection)
 
 ---
@@ -1188,7 +1186,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** danil-ch
 - **Download:** [Mod](https://deadlystream.com/files/file/1101-dodonna%27s-transmission/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** Recommend the Revisited option.
 
 ---
@@ -1196,7 +1194,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** DarthParametric
 - **Download:** [Mod](https://deadlystream.com/files/file/1342-movie-style-holograms-for-end-game-cutscenes/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** Crashes, probably related to problem this mod has on Mac/Linux
 
 ---
@@ -1228,7 +1226,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Rece
 - **Download:** [Mod](http://deadlystream.com/files/file/541-ajunta-palls-swords-revamped/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** Use the version not for the Weapon Model Overhaul, unless you choose to install it separately (NOT tested and NOT recommended).
 
 ---
@@ -1236,7 +1234,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Ebmar
 - **Download:** [Mod](https://deadlystream.com/files/file/1338-k1-legends-ajunta-palls-blade/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** Install the VarsityPuppet/Rece compatibility option if using Ajunta Pall's Swords.
 
 ---
@@ -1244,7 +1242,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** JCarter426
 - **Download:** [Mod](https://deadlystream.com/files/file/1454-jcs-mandalorian-armor-for-k1/)
-- **Method:** Multi-Run TSLPatcher\
+- **Method:** Multi-Run TSLPatcher
 **Installation instructions:** Install Option A. I recommend NOT re-running the patcher to install the extra textures, as upscaled textures installed in UCO are much higher-quality than these.
 
 ---
@@ -1252,7 +1250,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** darthbdaman
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1711)
-- **Method:** HoloPatcher\
+- **Method:** HoloPatcher
 **Installation instructions:** Run the patcher and select your desired install. I personally would recommend using at least one of the first three, as the mod is not worth it for just the feat changes in my opinion. My personal recommendation would be option 2 or 3 (especially if intending to use JC's Blaster Adjustment below), but I tested it with option 1 and did not find it terribly overpowered. Indeed, it made the game way harder at points as enemies were beaming me with multiple rifle attacks, so if you want an extra challenge option 1 is a valid choice.
 
 ---
@@ -1260,7 +1258,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** JCarter426
 - **Download:** [Mod](https://deadlystream.com/files/file/2827-jcs-blaster-adjustment-for-k1/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** If you installed the main option of Multifire and Autofire, I recommend using the Blaster Pistol + Critical option of this mod, as applying its changes to repeaters and rifles would make them insanely overpowered with their auto-attacks. If using Options 2 or 3 of Multifire and Autofire, I would recommend the Blaster Pistol & Blaster Rifle + Critical version of this mod--don't worry, it won't make rifles way stronger; JC's changes to the damage will overwrite bdaman's, in effect just adding JC's alterations to the critical strike ranges. Finally, if not using bdaman's mod, I recommend the full install.
 
 ---
@@ -1268,7 +1266,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Fallen Guardian
 - **Download:** [Mod](http://deadlystream.com/files/file/312-gaffi-stick-improvement/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** [2.1.2 TSLPatcher automatic installation detection](#212-tslpatcher-automatic-installation-detection)
 
 ---
@@ -1282,7 +1280,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Kexikus
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/66/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** [2.1.2 TSLPatcher automatic installation detection](#212-tslpatcher-automatic-installation-detection)
 
 ---
@@ -1308,7 +1306,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** TK-664
 - **Download:** [Mod](https://deadlystream.com/files/file/1866-npc-alignment-fix/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** [2.1.2 TSLPatcher automatic installation detection](#212-tslpatcher-automatic-installation-detection)
 
 ---
@@ -1322,7 +1320,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** offthegridmorty
 - **Download:** [Mod](https://deadlystream.com/files/file/2759-alignment-affects-force-powers-k1/)
-- **Method:** TSLPatcher\
+- **Method:** TSLPatcher
 **Installation instructions:** Ignore the Patch folder unless using K2 Force Powers for K1 (untested, but should function). I strongly recommend the combined install of "Alignment Affects Force Powers + Treat Injury Affects Force Healing."
 
 ---
@@ -1336,7 +1334,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Flachzangen, Malacand for the .sh script
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1384) [Mod](https://github.com/KOTOR-Community-Portal/mod-builds/blob/main/scripts/k1/tpc-deduper.sh)
-- **Method:** .bat Patcher, .sh script\
+- **Method:** .bat Patcher, .sh script
 **Installation instructions:** For Windows: Place DelDuplicateTGA-TPC in your main game folder (NOT override!), run it, say that TPC should be deleted and do not manually confirm. If you are on a Mac or other device that cannot run .bat files, you can also try downloading the [3C-FD tool](https://github.com/J0-o/3C-FD-Patcher) to identify the duplicates. If you aren't comfortable with downloading C3-FD, a list of all the files you will need to manually delete can be found [here](/modding/mod_builds/k1/delete). MAKE SURE THIS SCRIPT RUNS PROPERLY! On some operating systems, overzealous antivirus setups, or filepaths with particular characters in them it may fail. If the file outputs "Finished, Press any key to continue" but does not list any files it deleted, it is not working, and if it does not work it will crash your game. You can try to resolve this by moving your Override folder to a different location (I recommend a subfolder in your Documents or Downloads directories), putting the .bat file there and running it through that directory, but if that doesn't work you will need to manually go through and delete the duplicates from the link above. For Linux/Mac: Download the script from the linked GitHub page. For Mac, it can be run with the "zsh" command. The script does assume you're using the default installation path for the Steam version; if you aren't, you just need to change the GAMEDIR variable at the top of the script to point to your game folder (NOT your override folder) before you run it. You may have to run the script twice, if a given TPC file has BOTH a matching TGA file and a matching DDS file.
 
 ---
@@ -1344,7 +1342,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** ShiningRedHD
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1282?tab=files)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** Skip the compatch for Better Twi'lek Male Heads if you chose to use Leilukin's Male Twi'lek NPC Diversity.\
 **Installation instructions:** Scroll down to the "optional files" section of the mod page. In order, install the compatch for JC's Minor Fixes (delete N_CommM02 - N_CommM08 from the Aesthetics Improvements folder before moving to override, if using Dark Hope's male clothing upscale), the K1CP (delete "PLC_SSldCrps.tpc". Additionally delete N_CommM01 - 06, plus N_CommM08, if using Dark Hope's male clothing upscale, both before moving to override), and then all remaining content that matches content you chose to use from the builds (skipping Better Twi'lek Male Heads, if using Leilukin's male Twi'lek mod, as well as skipping the compatch for Republic Soldier's New Shade). I also recommend against using the patch for JC's Mandalorian Armor, as there are better options (in my opinion) in Character Textures & Model Fixes below. If using Thigh-High Boots for Twi'lek, move both the files within the NPC Replacement folder but exclude the files in the Optional folder therein.
 
@@ -1353,7 +1351,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** JCarter426
 - **Download:** [Mod](https://deadlystream.com/files/file/1180-jcs-republic-soldier-fix-for-k1/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** Move the files from the mod's Override folder to your game's override folder. For compatibility, you will need to only install the player clothing texture replacement for Soldier-class characters: move all files beginning "PFBBL" and "PMBBL" from the mod's Player Clothing folder to your override.
 
 ---
@@ -1361,7 +1359,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** ebmar
 - **Download:** [Mod](https://deadlystream.com/files/file/1365-k1-republic-soldiers-new-shade/)
-- **Method:** Multi-Run TSLPatcher\
+- **Method:** Multi-Run TSLPatcher
 **Installation instructions:** If using both components of JC's Republic Soldier Fix mod (the override files & the player replacement for the soldier characters), install Options 3 and 5; if using only the main component of JC's mod, install only Option 5; if not using JC's mod, install the Main file and Option 2.
 
 ---
@@ -1369,7 +1367,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Redrob41
 - **Download:** [Mod](https://deadlystream.com/files/file/2659-4x-upscale-character-textures-model-fixes/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Download instructions:** 2x `.tpc`\
 **Installation instructions:** If you are on a system which can run .bat files, I strongly recommend using the automated system to deal with compatibility for this mod. To do so, first extract redrob's mod from its archive, then go to [this page](https://github.com/KOTOR-Community-Portal/mod-builds/blob/main/scripts/cleaner.bat) and click on the button with the arrow pointing down at the top of the code list (the one which says "download raw file"). Place cleaner.bat in the folder from redrob's mod called "Copy contents to KotOR's Override folder", then go to [here](https://github.com/KOTOR-Community-Portal/mod-builds/blob/main/scripts/cleanlist_k1.txt) and repeat the same step, placing cleanlist_k1.txt in the same location. You can now run cleanlist.bat: follow the instructions onscreen, selecting whether you did or didn't use any of the given mods (note that the first thing it will ask you is whether you've installed "Mandatory Deletions"; rather than a mod, this is a required step to delete files that need to be removed regardless of what mods you're using, so just approve it). The batch file will automatically delete the incompatible files based on which mods you select that you've used in your install. Once you reach the end of the list, you can exit the .bat window, delete cleaner.bat and cleanlist_k1.txt, and then move the remaining files in the folder to your override. If you cannot run .bat files or feel uncomfortable running this file, you will need to manually delete the files yourself, following the instructions [here](https://github.com/KOTOR-Community-Portal/mod-builds/blob/main/content/k1/redrob_deletions.md).
 
@@ -1378,7 +1376,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Daniel Pistelli
 - **Download:** [Mod](https://ntcore.com/?page_id=371)
-- **Method:** Executable\
+- **Method:** Executable
 **Installation instructions:** There is no `.exe` to patch lol
 
 ---
@@ -1392,7 +1390,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** ndix UR
 - **Download:** [Mod](https://deadlystream.com/files/file/1159-kotor-high-resolution-menus/?tab=comments)
-- **Method:** .bat Patcher with Loose-File Components\
+- **Method:** .bat Patcher with Loose-File Components
 **Installation instructions:** The Switch version Fixes a lot of widescreen things
 
 ---
@@ -1400,7 +1398,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** ndix UR
 - **Download:** [Mod](https://deadlystream.com/files/file/1226-hd-ui-menu-pack/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** The buttons don't quite line up on most of these. lbl_abi_cost and lbl_align are okay though.
 
 ---
@@ -1414,7 +1412,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** ajdrenter
 - **Download:** [Mod](https://deadlystream.com/files/file/1815-pretty-good-icons-for-kotor/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** I recommend using the .tpc file option. For THIS MOD ONLY, do not overwrite when prompted!
 
 ---
@@ -1422,7 +1420,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Nehua
 - **Download:** [Mod](https://deadlystream.com/files/file/2303-hd-robe-icons-for-jcs-cloaked-jedis-and-effixs-extra-robes/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** In the "JC's Cloaked Jedis" folder, select the files from the version of JC's Cloaked Jedi Robes you utilized. Ignore the Effix folder unless playing with that specific mod.
 
 ---
@@ -1436,15 +1434,15 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Doiinko
 - **Download:** [Mod](https://deadlystream.com/files/file/1792-kotor-widescreen-fade-fix/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** The Switch version Fixes a lot of widescreen things
 
 ---
-### 3.197 Main Menu Widescreen Fix
+### 3.197 ~~Main Menu Widescreen Fix~~
 
 - **Author:** DarthParametric
 - **Download:** [Mod](https://deadlystream.com/files/file/1173-k1-main-menu-widescreen-fix/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** The Switch version Fixes a lot of widescreen things
 
 ---
@@ -1452,7 +1450,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** Pops Maellard
 - **Download:** [Mod](https://deadlystream.com/files/file/2380-k1-cutscenes-rescaled/)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** The Switch version has 720p upscaled versions of the cutscenes already. I tried adding the 1080p versions, but the audio becomes choppy. Just skip these
 
 ---
@@ -1460,7 +1458,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** naelavok
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1306)
-- **Method:** Loose-file with Possible Hex Editing Requirements\
+- **Method:** Loose-file
 **Installation instructions:** The Switch version has 720p upscaled versions of the cutscenes already. I tried adding the 1080p versions, but the audio becomes choppy. Just skip these
 
 ---
@@ -1468,7 +1466,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 
 - **Author:** VeSeeker
 - **Download:** [Mod](https://github.com/VeSeeker/switch-kpm-ips-patches)
-- **Method:** Loose-file\
+- **Method:** Loose-file
 **Installation instructions:** These are executable patches for the Switch, based on the [KPM](https://github.com/LaneDibello/Kotor-Patch-Manager) patches. You are free to pick and choose which patches you want to use. At a minimum, I strongly suggest using `AnimatedTextureFix`. I haven't finished porting many patches to the Switch as of yet, I will update this guide when I have ported all of them. To install a patch, you will move the patch **folder** to `atmosphere/exefs_patches/<patchName>/<BID>.ips` on your Switch. Do not put patches into override, or anywhere in `K1romfs`, it will not do anything.
 
 ---

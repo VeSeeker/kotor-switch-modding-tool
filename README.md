@@ -9,6 +9,12 @@ Based on and inspired by work from:\
 [JC2](https://deadlystream.com/profile/25613-jc2/)\
 [Leilukin](https://deadlystream.com/profile/23862-leilukin/)
 
+## Modding Guides
+
+Use my modding guides!
+[Kotor 1 Switch modding guide](K1Guide.md)
+[Kotor 2 Switch modding guide](K2Guide.md)
+
 ## Features
 
 - Provide a folder structure that modding tools expect
