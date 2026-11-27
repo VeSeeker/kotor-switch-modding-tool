@@ -11,8 +11,8 @@ Based on and inspired by work from:\
 
 ## Modding Guides
 
-Use my modding guides!
-[Kotor 1 Switch modding guide](K1Guide.md)
+Use my modding guides!\
+[Kotor 1 Switch modding guide](K1Guide.md)\
 [Kotor 2 Switch modding guide](K2Guide.md)
 
 ## Features
