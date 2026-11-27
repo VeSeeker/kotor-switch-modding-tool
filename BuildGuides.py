@@ -37,7 +37,7 @@ def render(nodes, depth=1):
             mod = [f"- **Author:** {n.get('author', '')}"]
             dl = " ".join(f"[{d['label']}]({d['url']})" for d in n.get("downloads", []))
             mod.append(f"- **Download:** {dl}")
-            method_suffix = "" if n.get("download_instructions") or n.get("install") else "\\"
+            method_suffix = "\\" if n.get("download_instructions") or n.get("install") else ""
             mod.append(f"- **Method:** {', '.join(n.get('method', []))}{method_suffix}")
             if n.get("download_instructions"):
                 mod.append(f"**Download instructions:** {text(n['download_instructions'])}\\")
