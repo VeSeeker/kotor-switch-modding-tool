@@ -1212,7 +1212,7 @@ I'm pretty happy with this build. I'll continue to update it as I make more IPS 
 
 When you have too many high quality textures, the Switch runs out of the VRAM pool of it's unified memory. Most commonly, this results in a crash during a loading screen. Rarely, you will be in an area, and new textures that would load in are invisible, and then you crash. The solution is just to downscale some of the textures. We end up getting pretty close to the limit in some modules.
 
-![Vram screenshot](https://github.com/VeSeeker/kotor-switch-modding-tool/Screenshots/K2_Vram.png)
+![Vram screenshot](Screenshots/K2_Vram.png)
 
 #### 5.1.1 Extra Downscales
 
@@ -1242,7 +1242,7 @@ Reading the bug reports, some people have seemingly fixed these on their own by 
 
 Some model have some.. issues. See below. No idea what causes it, so I just delete the necessary model files.
 
-![Model screenshot](https://github.com/VeSeeker/kotor-switch-modding-tool/Screenshots/K2_Model.png)
+![Model screenshot](Screenshots/K2_Model.png)
 
 ### 5.4 Flickering Textures
 
@@ -1272,7 +1272,7 @@ I'm going to look into patching this with an IPS patch. If that isn't possible, 
 
 Some of the mods provide updated icons for items in the game. If those images aren't a power of 2 resolution (64x64, 128x128, etc.), they end up looking weird and garbled. The fix is to resize them to be a power of 2 resolution. This is done automatically with the modding tool.
 
-![Garbled screenshot](https://github.com/VeSeeker/kotor-switch-modding-tool/Screenshots/K2_Garbled.png)
+![Garbled screenshot](Screenshots/K2_Garbled.png)
 
 ### 5.7 Aspyr Patch
 

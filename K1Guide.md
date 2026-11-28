@@ -1563,13 +1563,13 @@ Thankfully, the AnimatedTextureFix in [3.201 IPS Patches](#3201-ips-patches) fix
 
 Some of the mods provide updated icons for items in the game. If those images aren't a power of 2 resolution (64x64, 128x128, etc.), they end up looking weird and garbled. The fix is to resize them to be a power of 2 resolution. This is done automatically with the modding tool.
 
-![Garbled screenshot](https://github.com/VeSeeker/kotor-switch-modding-tool/Screenshots/K1_Garbled.png)
+![Garbled screenshot](Screenshots/K1_Garbled.png)
 
 ### 5.7 Reflective Lightsaber Problem
 
 This is specific to [3.107 ~~Reflective Lightsaber Blades~~](#3107-reflective-lightsaber-blades) and [3.108 ~~Darth Malak's Lightsaber~~](#3108-darth-malaks-lightsaber). For some reason, some, but not all of the lightsabers have these weird flat lines coming off of the sides of them.
 
-![Reflective screenshot](https://github.com/VeSeeker/kotor-switch-modding-tool/Screenshots/K1_Reflective.png)
+![Reflective screenshot](Screenshots/K1_Reflective.png)
 
 Again it's not all lightsabers so I really don't know what's going on, somebody smarter than me is needed to fix this cause I don't understand how this mod works well enough to fix it.
 
