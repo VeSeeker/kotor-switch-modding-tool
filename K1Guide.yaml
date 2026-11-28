@@ -4,7 +4,7 @@ author: VeSeeker
 sections:
   - id: intro
     title: Introduction
-    subtitle: You don't have to read this, but you may have questions if you don't
+    subtitle: "Warning: This is an experimental build. Like, more experimental than the other two builds. I'll update as I test it"
     body: |
       This guide is based on the neocities [KOTOR 1 Full Build for PC](https://kotor.neocities.org/modding/mod_builds/k1/full). I have gotten the vast majority of the mods in that build working on the Switch. You will need a modded Switch [running custom firmware](https://switch.hacks.guide/), or an emulator.
 
@@ -1271,6 +1271,20 @@ sections:
         install: |
           Use the K1CP compatible install option, if using the K1CP (you should be).
 
+      - id: sleheyron
+        type: mod
+        title: Mission to Sleheyron
+        author: SAO1138
+        downloads:
+          - {label: Mod, url: "https://deadlystream.com/files/file/2754-mission-to-sleheyron-a-new-story-expansion-mod-for-kotor/"}
+        method: ["HoloPatcher"]
+        install: |
+          **THIS MOD IS NOT PART OF NEOCITIES AND MAY CAUSE PROBLEMS** If you are just following this guide for a stable Switch build, skip this mod for the time being.
+
+          I'm testing installing the it here. It's kind of random, but FTD said to install it after {{ref:leviathan-prison-break}}, but that mod doesn't work on the Switch. If I get it to work at some point then I don't have to move this one
+
+          So going off of what FTD says, I'm installing the main mod, and then installing these compatches in this order: K1CP Comp Patch, JC's K2 Robes Comp Patch, Animated Neon Cantina Signs
+
       - id: dark-sacrifice
         type: mod
         title: Dark Sacrifice
@@ -2018,13 +2032,14 @@ sections:
         body: |
           Some of the mods provide updated icons for items in the game. If those images aren't a power of 2 resolution (64x64, 128x128, etc.), they end up looking weird and garbled. The fix is to resize them to be a power of 2 resolution. This is done automatically with the modding tool.
 
-          **Add screenshot here**
+          ![Garbled screenshot](https://github.com/VeSeeker/kotor-switch-modding-tool/Screenshots/K1_Garbled.png)
+
       - id: reflective-lightsaber-problem
         title: Reflective Lightsaber Problem
         body: |
           This is specific to {{ref:reflective-lightsaber-blades}} and {{ref:darth-malaks-lightsaber}}. For some reason, some, but not all of the lightsabers have these weird flat lines coming off of the sides of them.
 
-          **Add screenshot here**
+          ![Reflective screenshot](https://github.com/VeSeeker/kotor-switch-modding-tool/Screenshots/K1_Reflective.png)
 
           Again it's not all lightsabers so I really don't know what's going on, somebody smarter than me is needed to fix this cause I don't understand how this mod works well enough to fix it.
       - id: camera-placement-bug
