@@ -976,6 +976,8 @@ I'm testing installing the it here. It's kind of random, but FTD said to install
 
 So going off of what FTD says, I'm installing the main mod, and then installing these compatches in this order: K1CP Comp Patch, JC's K2 Robes Comp Patch, Animated Neon Cantina Signs
 
+You'll need to convert the `.mp3` to `.wav`. Use any online converter.
+
 ---
 ### 3.132 Dark Sacrifice
 
@@ -1495,6 +1497,8 @@ If you aren't comfortable with downloading C3-FD, a list of all the files you wi
 ## 4 Finalizing
 
 ### 4.1 Finishing Up
+
+Extract [this archive](https://www.mediafire.com/file/jbr045erbz4qwsq/K1Build_Missing_Txis.zip/file) into your override. It contains miscellaneous `.txi` files that the PC version has.
 
 Run `ksmt finalize 1`. Below are the prompts it will give you. Basically you say yes to everything:
 

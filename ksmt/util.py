@@ -36,9 +36,7 @@ def YesNo(text):
         else:
             Warning("Please enter y or n")
 
-def MirrorFolders(folderName, targetTXT):
-    targetFolder = os.path.join(rootDir, folderName)
-
+def MirrorFolders(path, targetTXT):
     if targetTXT not in os.listdir(fileListDir):
         Error(f"{targetTXT} missing from {fileListDir}")
         return False
@@ -46,11 +44,11 @@ def MirrorFolders(folderName, targetTXT):
     with open(os.path.join(fileListDir, f"{targetTXT}"), 'r', encoding='utf-8') as file:
         folders = file.readlines()
 
-    os.mkdir(targetFolder)
+    os.makedirs(path, exist_ok=True)
 
     for i in folders:
         name = i.replace("\n", '')
-        os.mkdir(os.path.join(targetFolder, name))
+        os.mkdir(os.path.join(path, name))
 
     return True
 

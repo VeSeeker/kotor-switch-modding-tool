@@ -1,4 +1,5 @@
-from .util import Success, Warning, Error, CheckInitializedExists, CheckFileLists, CheckCaseSensitive, MirrorFolders
+from .util import Success, Warning, Error, CheckInitializedExists, CheckFileLists, CheckCaseSensitive, MirrorFolders, rootDir
+import os
 
 def Initialize(gameNum):
 
@@ -23,7 +24,7 @@ def Initialize(gameNum):
 
     print("Mirroring PC folder structure... ")
 
-    if MirrorFolders(f"K{gameNum}romfs", f"K{gameNum}PCFolders.txt"):
+    if MirrorFolders(os.path.join(rootDir, f"K{gameNum}romfs"), f"K{gameNum}PCFolders.txt"):
         return True
     else:
         Error("Folder mirroring failed")

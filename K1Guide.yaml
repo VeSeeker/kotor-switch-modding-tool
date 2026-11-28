@@ -1287,6 +1287,8 @@ sections:
 
           So going off of what FTD says, I'm installing the main mod, and then installing these compatches in this order: K1CP Comp Patch, JC's K2 Robes Comp Patch, Animated Neon Cantina Signs
 
+          You'll need to convert the `.mp3` to `.wav`. Use any online converter.
+
       - id: dark-sacrifice
         type: mod
         title: Dark Sacrifice
@@ -1955,6 +1957,8 @@ sections:
       - id: finishing-up
         title: Finishing Up
         body: |
+          Extract [this archive](https://www.mediafire.com/file/jbr045erbz4qwsq/K1Build_Missing_Txis.zip/file) into your override. It contains miscellaneous `.txi` files that the PC version has.
+
           Run `ksmt finalize 1`. Below are the prompts it will give you. Basically you say yes to everything:
 
           `Convert X files to .tpc using tga2tpc-py? Y`\

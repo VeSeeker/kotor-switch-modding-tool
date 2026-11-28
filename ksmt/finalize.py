@@ -101,7 +101,7 @@ def Finalize(gameNum):
     else:
         Error(f"Invalid game number: {gameNum}")
         return False
-    targetFolderPath = os.path.join(rootDir, targetFolderName)
+    targetFolderPath = os.path.join(rootDir, "romfs", targetFolderName)
 
     k2Languages = ["English", "French", "German", "Italian", "Japanese", "Spanish"]
 
