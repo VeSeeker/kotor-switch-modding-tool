@@ -114,7 +114,7 @@ sections:
           - {label: Patch, url: "https://mega.nz/file/McJF1AIC#Jywhu6zXWCRz4gRghxMxoBAWrbU_A3giD1INsOoHqmA"}
         method: [TSLPatcher, Loose-file]
         install: |
-          Install the patch first. Then move the files in either the 'Transparent' or 'Non-Transparent' folder into override. You can optionally move the 'Sith eyes' files into override as well.
+          Install the patch first. Then move the files in either the 'Transparent' or 'Non-Transparent' from the patch into override. You can optionally move the 'Sith eyes' files into override as well.
 
       - id: kotor-community-patch
         type: mod
@@ -156,7 +156,7 @@ sections:
         download_instructions: |
           Download the `.tpc` version
         install: |
-          Delete or fix `LKO_blast01`, `LKOa_blast1`. See {{ref:texture-outlines}}
+          Delete or fix `LKO_blast01.tga`, `LKOa_blast01.tga` before moving to override. See {{ref:texture-outlines}}
 
       - id: ultimate-kashyyyk
         type: mod
@@ -178,7 +178,7 @@ sections:
         download_instructions: |
           Download the `.tpc` version
         install: |
-          Delete or fix `LTA_blas01`. See {{ref:texture-outlines}}
+          Delete or fix `LTA_blas01.tpc` before moving to override. See {{ref:texture-outlines}}
 
       - id: ultimate-dantooine
         type: mod
@@ -190,7 +190,7 @@ sections:
         download_instructions: |
           Download the `.tpc` version
         install: |
-          Delete or fix `LDA_leaf01`, `02`, and `04`. See {{ref:texture-outlines}}
+          Delete or fix `LDA_leaf01.tga`, `LDA_leaf02.tga` and `.txi, and `LDA_leaf04.tga` before moving to override. See {{ref:texture-outlines}}
 
       - id: ultimate-endar-spire
         type: mod
@@ -222,7 +222,7 @@ sections:
         download_instructions: |
           Download the `.tpc` version
         install: |
-          Delete `LSI_win01.tpc` and `LSI_box01.tpc` before moving to override
+          Delete `LSI_box01.tpc` and `LSI_win01.tpc` before moving to override
 
       - id: ultimate-character-overhaul
         type: mod
@@ -244,7 +244,9 @@ sections:
         download_instructions: |
           Download the `.tpc` version
         install: |
-          Delete `LUN_blst01.tpc` and `LUN_blst02.tpc` before moving to override. Delete or fix `LUN_blst01`, `02`, `LUN_rocky2`, `LUN_sand02`. See {{ref:texture-outlines}}
+          Delete `LUN_blst01.tpc` and `LUN_blst02.tpc` before moving to override.
+
+          Delete or fix `LUN_rocky2.tga`, `LUN_sand02.tpc` before moving to override. See {{ref:texture-outlines}}
 
       - id: korriban-sith-art
         type: mod
@@ -970,7 +972,7 @@ sections:
         download_instructions: |
           Unless using one of the mods for which Kex has developed skyboxes (not recommended, as they're almost certainly not compatible with this build) simply download the 'HQSkyboxesII_K1.7z' file.
         install: |
-          Delete m36aa_01_lm0 through m36aa_01_lm2.tga before moving to the override, then apply the patch. Delete `CM_m02abB.tga`, otherwise you crash in Taris upper city.
+          Delete `CM_m02abB.tga`, and m36aa_01_lm0 through m36aa_01_lm2.tga before moving to the override, then apply the patch.
 
       - id: ebon-hawk-transparent-cockpit-windows
         type: mod
@@ -1332,6 +1334,8 @@ sections:
         method: ["TSLPatcher"]
         download_instructions: |
           Full or Light version is your choice.
+        install: |
+          {{ref:tslpatcher}}
 
       - id: manaan-rapid-transit
         type: mod
@@ -1466,7 +1470,7 @@ sections:
           - {label: Mod, url: "https://deadlystream.com/files/file/1006-bastilas-dark-bodysuit-by-quanon-revanator/"}
         method: ["TSLPatcher"]
         install: |
-          {{ref:tslpatcher}}. Use the regular install—other install variants have been linked to sequence breaks, but the normal install variant is fully functional. After installing, delete `P_BastilaBB02.mdl` and `.mdx` from override, see {{ref:model-problems}}
+          {{ref:tslpatcher}}, `Regular/regular.ini`. Use the regular install—other install variants have been linked to sequence breaks, but the normal install variant is fully functional. After installing, delete `P_BastilaBB02.mdl` and `.mdx` from override, see {{ref:model-problems}}
 
       - id: dueling-arena-adjustment
         type: mod
@@ -1754,22 +1758,28 @@ sections:
 
       - id: galaxy-map-fix
         type: mod
-        title: Galaxy Map Fix
+        title: ~~Galaxy Map Fix~~
         author: Kexikus & Sith Holocron
         downloads:
           - {label: Mod, url: "http://deadlystream.com/files/file/1068-k1-galaxy-map-fix-pack/"}
         method: ["TSLPatcher"]
+        install: |
+          The problem with this mod is that unless you're playing on a Switch lite, you're going to want to be able to switch between 720p and 1080p. If you're on Switch lite then this mod will probably work fine.
 
       - id: remove-duplicate-tgatpc
         type: mod
         title: Remove Duplicate TGA/TPC
         author: Flachzangen, Malacand for the .sh script
         downloads:
-          - {label: Mod, url: "https://www.nexusmods.com/kotor/mods/1384"}
-          - {label: Mod, url: "https://github.com/KOTOR-Community-Portal/mod-builds/blob/main/scripts/k1/tpc-deduper.sh"}
+          - {label: Windows users, url: "https://www.nexusmods.com/kotor/mods/1384"}
+          - {label: Mac/Linux users, url: "https://github.com/KOTOR-Community-Portal/mod-builds/blob/main/scripts/k1/tpc-deduper.sh"}
         method: [".bat Patcher", ".sh script"]
         install: |
-          For Windows: Place DelDuplicateTGA-TPC in your main game folder (NOT override!), run it, say that TPC should be deleted and do not manually confirm. If you are on a Mac or other device that cannot run .bat files, you can also try downloading the [3C-FD tool](https://github.com/J0-o/3C-FD-Patcher) to identify the duplicates. If you aren't comfortable with downloading C3-FD, a list of all the files you will need to manually delete can be found [here](/modding/mod_builds/k1/delete). MAKE SURE THIS SCRIPT RUNS PROPERLY! On some operating systems, overzealous antivirus setups, or filepaths with particular characters in them it may fail. If the file outputs "Finished, Press any key to continue" but does not list any files it deleted, it is not working, and if it does not work it will crash your game. You can try to resolve this by moving your Override folder to a different location (I recommend a subfolder in your Documents or Downloads directories), putting the .bat file there and running it through that directory, but if that doesn't work you will need to manually go through and delete the duplicates from the link above. For Linux/Mac: Download the script from the linked GitHub page. For Mac, it can be run with the "zsh" command. The script does assume you're using the default installation path for the Steam version; if you aren't, you just need to change the GAMEDIR variable at the top of the script to point to your game folder (NOT your override folder) before you run it. You may have to run the script twice, if a given TPC file has BOTH a matching TGA file and a matching DDS file.
+          For Windows: Place DelDuplicateTGA-TPC in your main game folder (NOT override!), run it, say that TPC should be deleted and do not manually confirm.
+
+          If you are on a Mac or other device that cannot run .bat files, you can also try downloading the [3C-FD tool](https://github.com/J0-o/3C-FD-Patcher) to identify the duplicates. If you do this, make sure you open the .sh file and change the game install location to your K1romfs folder.
+
+          If you aren't comfortable with downloading C3-FD, a list of all the files you will need to manually delete can be found [here](/modding/mod_builds/k1/delete). MAKE SURE THIS SCRIPT RUNS PROPERLY! On some operating systems, overzealous antivirus setups, or filepaths with particular characters in them it may fail. If the file outputs "Finished, Press any key to continue" but does not list any files it deleted, it is not working, and if it does not work it will crash your game. You can try to resolve this by moving your Override folder to a different location (I recommend a subfolder in your Documents or Downloads directories), putting the .bat file there and running it through that directory, but if that doesn't work you will need to manually go through and delete the duplicates from the link above. For Linux/Mac: Download the script from the linked GitHub page. For Mac, it can be run with the "zsh" command. The script does assume you're using the default installation path for the Steam version; if you aren't, you just need to change the GAMEDIR variable at the top of the script to point to your game folder (NOT your override folder) before you run it. You may have to run the script twice, if a given TPC file has BOTH a matching TGA file and a matching DDS file.
 
       - id: ultimate-character-overhaul-patches
         type: mod
@@ -1811,7 +1821,7 @@ sections:
           - {label: Mod, url: "https://deadlystream.com/files/file/2659-4x-upscale-character-textures-model-fixes/"}
         method: ["Loose-file"]
         download_instructions: |
-          2x `.tpc`
+          2x .tpc
         install: |
           If you are on a system which can run .bat files, I strongly recommend using the automated system to deal with compatibility for this mod. To do so, first extract redrob's mod from its archive, then go to [this page](https://github.com/KOTOR-Community-Portal/mod-builds/blob/main/scripts/cleaner.bat) and click on the button with the arrow pointing down at the top of the code list (the one which says "download raw file"). Place cleaner.bat in the folder from redrob's mod called "Copy contents to KotOR's Override folder", then go to [here](https://github.com/KOTOR-Community-Portal/mod-builds/blob/main/scripts/cleanlist_k1.txt) and repeat the same step, placing cleanlist_k1.txt in the same location. You can now run cleanlist.bat: follow the instructions onscreen, selecting whether you did or didn't use any of the given mods (note that the first thing it will ask you is whether you've installed "Mandatory Deletions"; rather than a mod, this is a required step to delete files that need to be removed regardless of what mods you're using, so just approve it). The batch file will automatically delete the incompatible files based on which mods you select that you've used in your install. Once you reach the end of the list, you can exit the .bat window, delete cleaner.bat and cleanlist_k1.txt, and then move the remaining files in the folder to your override. If you cannot run .bat files or feel uncomfortable running this file, you will need to manually delete the files yourself, following the instructions [here](https://github.com/KOTOR-Community-Portal/mod-builds/blob/main/content/k1/redrob_deletions.md).
 
@@ -1937,7 +1947,7 @@ sections:
           - {label: Mod, url: "https://github.com/VeSeeker/switch-kpm-ips-patches"}
         method: ["Loose-file"]
         install: |
-          These are executable patches for the Switch, based on the [KPM](https://github.com/LaneDibello/Kotor-Patch-Manager) patches. You are free to pick and choose which patches you want to use. At a minimum, I strongly suggest using `AnimatedTextureFix`. I haven't finished porting many patches to the Switch as of yet, I will update this guide when I have ported all of them. To install a patch, you will move the patch **folder** to `atmosphere/exefs_patches/<patchName>/<BID>.ips` on your Switch. Do not put patches into override, or anywhere in `K1romfs`, it will not do anything.
+          These are executable patches for the Switch, based on the [KPM](https://github.com/LaneDibello/Kotor-Patch-Manager) patches. You are free to pick and choose which patches you want to use. At a minimum, I strongly suggest using `AnimatedTextureFix`. I haven't finished porting many patches to the Switch as of yet, I will update this guide when I have ported all of them. To install a patch, you will move the patch **folder** to `atmosphere/exefs_patches/<patchName>/<BID>.ips` on your Switch. Do not put the patches themselves into override, or anywhere in `K1romfs`, it will not do anything. Only put a patch's additional files into override, if applicable.
 
   - id: finalizing
     title: Finalizing
@@ -1945,7 +1955,12 @@ sections:
       - id: finishing-up
         title: Finishing Up
         body: |
-          Run `ksmt finalize 1`. **Add responses to each YesNo prompt**.
+          Run `ksmt finalize 1`. Below are the prompts it will give you. Basically you say yes to everything:
+
+          `Convert X files to .tpc using tga2tpc-py? Y`\
+          `Downscale all 4K modded textures? Y`\
+          `Extra downscales? Y`\
+
           This should leave you with the folder `kotor-switch-modding-tool/0100854015868000`. Connect your Switch (or sd card) to your computer and navigate to `atmosphere/contents`. If there is already a `0100854015868000` folder, delete it, and then move the finalized `0100854015868000` from the modding tool. The file structure should be: `atmophere/contents/0100854015868000/`.
 
           Don't forget to move IPS patches to `atmosphere/exefs_patches/`!

@@ -8,13 +8,13 @@ from .imageresize import downscale, resize, extent_center, crop, save
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 cycleTextures = {
-    "PLC_Kiosk1": "00d627a12e94a68b58d8eb182b2b03645e145df04a463937a1f77c8ead67fcef",
-    "PLC_CompPnl": "d32d6cea0a440a78b5424b361ecde427b33753e723b98d5e1f92ba3b0e36fde7",
-    "PLC_CompPnl_b": "d32d6cea0a440a78b5424b361ecde427b33753e723b98d5e1f92ba3b0e36fde7",
-    "PLC_Desk1": "e8953d8d1e9d44c3141c69679517c04cd6295ddccfe8595191682bade7a1e8ff",
-    "PLC_Sign": "f010020e59eefd2cb1229b9e00545ca2b63b26944e065c24680b613c1342debd",
-    "PLC_RepTab": "8a4daabeb84ee39b723a6a0c16abcf8965823ca4ca8bc206f5f1646bf700538c",
-    "PLC_RepTab2": "f6b4bf29917d9d38add969b4e95fb539a317f0adc3bd80f4df59427017517a3f",
+    "PLC_Kiosk1.tga": "00d627a12e94a68b58d8eb182b2b03645e145df04a463937a1f77c8ead67fcef",
+    "PLC_CompPnl.tga": "d32d6cea0a440a78b5424b361ecde427b33753e723b98d5e1f92ba3b0e36fde7",
+    "PLC_CompPnl_b.tga": "d32d6cea0a440a78b5424b361ecde427b33753e723b98d5e1f92ba3b0e36fde7",
+    "PLC_Desk1.tga": "e8953d8d1e9d44c3141c69679517c04cd6295ddccfe8595191682bade7a1e8ff",
+    "PLC_Sign.tga": "f010020e59eefd2cb1229b9e00545ca2b63b26944e065c24680b613c1342debd",
+    "PLC_RepTab.tga": "8a4daabeb84ee39b723a6a0c16abcf8965823ca4ca8bc206f5f1646bf700538c",
+    "PLC_RepTab2.tga": "f6b4bf29917d9d38add969b4e95fb539a317f0adc3bd80f4df59427017517a3f",
     "vurt": "31e9b9a69d30799c7c0b082d8b186099cd29da44955efe4b119f789a71605a6c"
 }
 jcBlasterTextures = [
@@ -246,7 +246,7 @@ def Finalize(gameNum):
     fourKTpc = []
     fourKTga = []
     if downS:
-        tga4K = 65000000
+        tga4K = 50000000
         tpc4K = 21000000
         for i in os.listdir(overrideDir):
             root, extension = os.path.splitext(i)
@@ -256,7 +256,13 @@ def Finalize(gameNum):
                     fourKTpc.append(i)
             elif extension.lower() == ".tga":
                 if size > tga4K:
-                    fourKTga.append(i)
+                    imgSize = ReadTgaSize(os.path.join(overrideDir, i))
+                    if imgSize is None:
+                        Warning(f"Couldn't read the size of {i}, skipping")
+                        continue
+                    width, height = imgSize
+                    if (width >= 4096) and (height >= 4096):
+                        fourKTga.append(i)
         print(f"Found {len(fourKTpc)} 4K .tpc files and {len(fourKTga)} 4K .tga files")
 
     oneNineTwo = []
@@ -632,6 +638,14 @@ def Finalize(gameNum):
     new2da = []
     newLocalized = []
     basicFile = []
+    saves = []
+    tempSavesDir = os.path.join(rootDir, "tempSaves")
+    os.makedirs(tempSavesDir, exist_ok=True)
+
+    for i in os.listdir(os.path.join(initFolder, "saves")):
+        saves.append(i)
+    for i in saves:
+        shutil.move(os.path.join(initFolder, "saves", i), os.path.join(tempSavesDir, i))
 
     for root, _, filenames in os.walk(initFolder):
         relPath = os.path.relpath(root, initFolder).split(os.sep)[0]
@@ -705,6 +719,10 @@ def Finalize(gameNum):
         cnt += 1
         print(f"\rMoved remaining files: {cnt}/{len(basicFile)}", end='', flush=True)
     print("")
+
+    for i in saves:
+        shutil.move(os.path.join(tempSavesDir, i), os.path.join(targetFolderPath, "saves", i))
+    rmrf(tempSavesDir)
 
     Success(f"Finalized folder created at {targetFolderPath}")
 

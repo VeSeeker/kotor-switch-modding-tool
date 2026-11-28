@@ -40,7 +40,8 @@ def render(nodes, depth=1):
             method_suffix = "\\" if n.get("download_instructions") or n.get("install") else ""
             mod.append(f"- **Method:** {', '.join(n.get('method', []))}{method_suffix}")
             if n.get("download_instructions"):
-                mod.append(f"**Download instructions:** {text(n['download_instructions'])}\\")
+                download_suffix = "\\" if n.get("install") else ""
+                mod.append(f"**Download instructions:** {text(n['download_instructions'])}{download_suffix}")
             if n.get("install"):
                 mod.append(f"**Installation instructions:** {resolve(text(n['install']))}\n")
             mod.append("---")

@@ -4,7 +4,7 @@ import shutil
 
 rootBackupDir = os.path.join(rootDir, "backups")
 
-def Backup(gameNum, deleteAfterBackup=True):
+def Backup(gameNum, deleteAfterBackup=False):
 
     if not CheckInitializedExists(gameNum):
         Error(f"No Kotor {gameNum} folder to backup")

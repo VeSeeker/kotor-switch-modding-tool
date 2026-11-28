@@ -67,7 +67,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 - **Author:** J
 - **Download:** [Mod](https://deadlystream.com/files/file/2699-stutter-fix-and-force-cage-update/)
 - **Method:** Loose-file\
-**Download instructions:** If you want both the fix and the new force cage model, download just forcecage_updated_1.1.0.zip\
+**Download instructions:** If you want both the fix and the new force cage model, download just forcecage_updated_1.1.0.zip
 ---
 ### 3.5 ~~4GB Patcher~~
 
@@ -228,7 +228,7 @@ Delete or fix DAN_leaf02, 03. See [5.2 Texture Outlines](#52-texture-outlines)
 - **Author:** MessesWithWolves
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1632)
 - **Method:** Loose-file\
-**Download instructions:** Download and install both files.\
+**Download instructions:** Download and install both files.
 ---
 ### 3.25 Ritual and Water Textures
 
@@ -249,7 +249,7 @@ Delete or fix DAN_leaf02, 03. See [5.2 Texture Outlines](#52-texture-outlines)
 - **Author:** LoneWanderer
 - **Download:** [Mod](https://deadlystream.com/files/file/1860-droid-special-weapons-fix-for-tsl-v10/)
 - **Method:** TSLPatcher\
-**Download instructions:** Use the V2 version of the mod.\
+**Download instructions:** Use the V2 version of the mod.
 ---
 ### 3.28 Honest Merchant
 
@@ -284,7 +284,7 @@ Delete or fix DAN_leaf02, 03. See [5.2 Texture Outlines](#52-texture-outlines)
 - **Author:** Dark Hope, patch by Marcus Ramikin
 - **Download:** [Mod](https://deadlystream.com/files/file/2277-kiosk-hd/) [Patch](https://deadlystream.com/files/file/2910-kiosk-model-fix-for-k2/)
 - **Method:** Loose-file\
-**Download instructions:** Download the "Kiosk HD 15.03.2024" version.\
+**Download instructions:** Download the "Kiosk HD 15.03.2024" version.
 ---
 ### 3.33 HD Desk
 
@@ -415,7 +415,7 @@ Delete or fix DAN_leaf02, 03. See [5.2 Texture Outlines](#52-texture-outlines)
 - **Author:** Constar
 - **Download:** [Mod](http://deadlystream.com/files/file/441-4k-atton/)
 - **Method:** Loose-file\
-**Download instructions:** Download the .tpc version of the mod.\
+**Download instructions:** Download the .tpc version of the mod.
 ---
 ### 3.52 Atton with Scruff
 
@@ -450,7 +450,7 @@ Delete or fix DAN_leaf02, 03. See [5.2 Texture Outlines](#52-texture-outlines)
 - **Author:** Darth_Sapiens
 - **Download:** [Mod](http://deadlystream.com/files/file/367-darth-sapiens-presents-hd-darth-nihilus/)
 - **Method:** Loose-file\
-**Download instructions:** Download and install the .tpc filetype version: it is nearly lossless, much more performant due to the smaller size, and critically fixes several issues caused by the very large texture size of the original upload.\
+**Download instructions:** Download and install the .tpc filetype version: it is nearly lossless, much more performant due to the smaller size, and critically fixes several issues caused by the very large texture size of the original upload.
 ---
 ### 3.57 Darth Sion Remake
 
@@ -477,7 +477,7 @@ Delete or fix DAN_leaf02, 03. See [5.2 Texture Outlines](#52-texture-outlines)
 - **Author:** Feeling
 - **Download:** [Mod](https://deadlystream.com/files/file/2299-visas-reduced-model-clipping/)
 - **Method:** Loose-file\
-**Download instructions:** Either option is fine, choose which you prefer based on the screenshots.\
+**Download instructions:** Either option is fine, choose which you prefer based on the screenshots.
 ---
 ### 3.61 HD Visas Marr
 
@@ -572,7 +572,7 @@ Install the main mod, then move the files in the Switch Patch into override.
 - **Author:** ScrierOne
 - **Download:** [Mod](https://deadlystream.com/files/file/2063-neglected-computer-panel/)
 - **Method:** Loose-file\
-**Download instructions:** Download only the Damaged version, it contains files for both.\
+**Download instructions:** Download only the Damaged version, it contains files for both.
 ---
 ### 3.74 Improved Peragus Asteroids
 
@@ -624,7 +624,7 @@ Install the main mod, then move the files in the Switch Patch into override.
 - **Author:** JCarter426
 - **Download:** [Mod](https://deadlystream.com/files/file/1217-jcs-citadel-station-backdrop/)
 - **Method:** Loose-file\
-**Download instructions:** 2k version\
+**Download instructions:** 2k version
 ---
 ### 3.81 HQ Skyboxes II
 
@@ -688,7 +688,7 @@ After this mod has finished installing, if you are using the K2CP, extract the K
 - **Author:** milestails
 - **Download:** [Mod](http://deadlystream.com/files/file/842-aleema-ketos-robe-description-correction/)
 - **Method:** Loose-file\
-**Download instructions:** Download the larger of the two files.\
+**Download instructions:** Download the larger of the two files.
 ---
 ### 3.89 Short-Term Memory Fix
 
@@ -1045,14 +1045,14 @@ After this mod has finished installing, if you are using the K2CP, extract the K
 - **Author:** DarthParametric
 - **Download:** [Mod](https://deadlystream.com/files/file/1201-fixed-hologram-models-and-admiralty-redux-for-tslrcm/)
 - **Method:** TSLPatcher\
-**Download instructions:** Download just the main file, not the robes patch.\
+**Download instructions:** Download just the main file, not the robes patch.
 ---
 ### 3.138 Relighting TSL
 
 - **Author:** J
 - **Download:** [Mod](https://deadlystream.com/files/file/2752-relighting-tsl-early-release/)
 - **Method:** Loose-file\
-**Download instructions:** Download and apply all files, unless NOT using TSLRCM (in which case, skip relightingtsl_298TELk_1.0.zip).\
+**Download instructions:** Download and apply all files, unless NOT using TSLRCM (in which case, skip relightingtsl_298TELk_1.0.zip).
 ---
 ### 3.139 Companion Clothes
 

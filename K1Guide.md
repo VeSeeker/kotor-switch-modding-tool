@@ -91,7 +91,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 - **Author:** Silveredge9, Patch by Future Pilot
 - **Download:** [Mod](https://deadlystream.com/files/file/824-ajunta-pall-unique-appearance/) [Patch](https://mega.nz/file/McJF1AIC#Jywhu6zXWCRz4gRghxMxoBAWrbU_A3giD1INsOoHqmA)
 - **Method:** TSLPatcher, Loose-file\
-**Installation instructions:** Install the patch first. Then move the files in either the 'Transparent' or 'Non-Transparent' folder into override. You can optionally move the 'Sith eyes' files into override as well.
+**Installation instructions:** Install the patch first. Then move the files in either the 'Transparent' or 'Non-Transparent' from the patch into override. You can optionally move the 'Sith eyes' files into override as well.
 
 ---
 ### 3.8 KOTOR Community Patch & Patch
@@ -122,7 +122,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1367) [Patch](https://mega.nz/file/NEpH3AoZ#5RVfQHjkdk6b3lgcJzgitpCb1YQlfYqhTM0XF3Z9LMM)
 - **Method:** Loose-file\
 **Download instructions:** Download the `.tpc` version\
-**Installation instructions:** Delete or fix `LKO_blast01`, `LKOa_blast1`. See [5.2 Texture Outlines](#52-texture-outlines)
+**Installation instructions:** Delete or fix `LKO_blast01.tga`, `LKOa_blast01.tga` before moving to override. See [5.2 Texture Outlines](#52-texture-outlines)
 
 ---
 ### 3.12 Ultimate Kashyyyk
@@ -130,7 +130,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 - **Author:** ShiningRedHD
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1365)
 - **Method:** Loose-file\
-**Download instructions:** Download the `.tpc` version\
+**Download instructions:** Download the `.tpc` version
 ---
 ### 3.13 Ultimate Tatooine
 
@@ -138,7 +138,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1364)
 - **Method:** Loose-file\
 **Download instructions:** Download the `.tpc` version\
-**Installation instructions:** Delete or fix `LTA_blas01`. See [5.2 Texture Outlines](#52-texture-outlines)
+**Installation instructions:** Delete or fix `LTA_blas01.tpc` before moving to override. See [5.2 Texture Outlines](#52-texture-outlines)
 
 ---
 ### 3.14 Ultimate Dantooine
@@ -147,7 +147,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1368)
 - **Method:** Loose-file\
 **Download instructions:** Download the `.tpc` version\
-**Installation instructions:** Delete or fix `LDA_leaf01`, `02`, and `04`. See [5.2 Texture Outlines](#52-texture-outlines)
+**Installation instructions:** Delete or fix `LDA_leaf01.tga`, `LDA_leaf02.tga` and `.txi, and `LDA_leaf04.tga` before moving to override. See [5.2 Texture Outlines](#52-texture-outlines)
 
 ---
 ### 3.15 Ultimate Endar Spire +
@@ -155,14 +155,14 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 - **Author:** ShiningRedHD
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1370)
 - **Method:** Loose-file\
-**Download instructions:** Download the `.tpc` version\
+**Download instructions:** Download the `.tpc` version
 ---
 ### 3.16 Ultimate Manaan
 
 - **Author:** ShiningRedHD
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1366)
 - **Method:** Loose-file\
-**Download instructions:** Download the `.tpc` version\
+**Download instructions:** Download the `.tpc` version
 ---
 ### 3.17 Ultimate Taris
 
@@ -170,7 +170,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1360)
 - **Method:** Loose-file\
 **Download instructions:** Download the `.tpc` version\
-**Installation instructions:** Delete `LSI_win01.tpc` and `LSI_box01.tpc` before moving to override
+**Installation instructions:** Delete `LSI_box01.tpc` and `LSI_win01.tpc` before moving to override
 
 ---
 ### 3.18 Ultimate Character Overhaul
@@ -178,7 +178,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 - **Author:** ShiningRedHD
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1282)
 - **Method:** Loose-file\
-**Download instructions:** Download only the 2x `.tpc` version\
+**Download instructions:** Download only the 2x `.tpc` version
 ---
 ### 3.19 Ultimate Unknown World
 
@@ -186,7 +186,9 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1369)
 - **Method:** Loose-file\
 **Download instructions:** Download the `.tpc` version\
-**Installation instructions:** Delete `LUN_blst01.tpc` and `LUN_blst02.tpc` before moving to override. Delete or fix `LUN_blst01`, `02`, `LUN_rocky2`, `LUN_sand02`. See [5.2 Texture Outlines](#52-texture-outlines)
+**Installation instructions:** Delete `LUN_blst01.tpc` and `LUN_blst02.tpc` before moving to override.
+
+Delete or fix `LUN_rocky2.tga`, `LUN_sand02.tpc` before moving to override. See [5.2 Texture Outlines](#52-texture-outlines)
 
 ---
 ### 3.20 Korriban Sith Art
@@ -194,7 +196,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 - **Author:** MessesWithWolves
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1632)
 - **Method:** Loose-file\
-**Download instructions:** Download and install both files.\
+**Download instructions:** Download and install both files.
 ---
 ### 3.21 Duncan on Manaan
 
@@ -295,7 +297,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 - **Author:** Etienne76
 - **Download:** [Mod](https://deadlystream.com/files/file/2514-hd-realistic-sand-people/) [Patch](https://mega.nz/file/1ApXxLgY#iAK97Ydx2xvH5ws7NevJGU3ZJQarhBwDAIFcH73O3W4)
 - **Method:** Loose-file\
-**Download instructions:** For this mod, download the `.tga` filetype version (not the `.tpc`).\
+**Download instructions:** For this mod, download the `.tga` filetype version (not the `.tpc`).
 ---
 ### 3.37 Better Twi'lek Heads
 
@@ -310,7 +312,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 - **Author:** Dark Hope
 - **Download:** [Mod](http://deadlystream.com/files/file/982-hd-twilek-female/)
 - **Method:** Loose-file\
-**Download instructions:** Download the 'hd_twilek_female.rar' file, and ignore the other versions.\
+**Download instructions:** Download the 'hd_twilek_female.rar' file, and ignore the other versions.
 ---
 ### 3.39 Thigh-High Boots for Twi'lek
 
@@ -467,7 +469,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 - **Author:** Dark Hope, patch by Marius Fett
 - **Download:** [Mod](https://deadlystream.com/files/file/2277-kiosk-hd/) [Patch](https://deadlystream.com/files/file/2909-kiosk-model-fix-for-k1/)
 - **Method:** Loose-file\
-**Download instructions:** Download the "Kiosk HD 15.03.2024" version.\
+**Download instructions:** Download the "Kiosk HD 15.03.2024" version.
 ---
 ### 3.60 HD Desk
 
@@ -513,7 +515,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 - **Author:** Dark Hope
 - **Download:** [Mod](https://deadlystream.com/files/file/2382-ithorian-hd/)
 - **Method:** Loose-file\
-**Download instructions:** Choose between the base install and the Vurt retexture based on your preference. The preview screenshots at the top of the page are the base install, the spoilered screenshots at the bottom of the mod description are the modified Vurt versions.\
+**Download instructions:** Choose between the base install and the Vurt retexture based on your preference. The preview screenshots at the top of the page are the base install, the spoilered screenshots at the bottom of the mod description are the modified Vurt versions.
 ---
 ### 3.67 HD Duros
 
@@ -593,7 +595,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 - **Author:** Dark Hope
 - **Download:** [Mod](http://deadlystream.com/files/file/1123-hd-canderous-ordo/) [Patch](https://mega.nz/#!dFJBEYhA!FY9h6AmYVDizyVPZo_I3vXqAIWVrK1TUzT42msGqtpQ)
 - **Method:** Loose-file & Patch\
-**Download instructions:** Download only the version marked 'new clothes,' which includes both clothing and body textures. We get our head texture from the below mod. Remember to also download the patch.\
+**Download instructions:** Download only the version marked 'new clothes,' which includes both clothing and body textures. We get our head texture from the below mod. Remember to also download the patch.
 ---
 ### 3.79 Quanon's Canderous
 
@@ -656,7 +658,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 - **Author:** Dark Hope
 - **Download:** [Mod](https://deadlystream.com/files/file/1125-hd-kt-400-military-droid-carrier-and-lethisk-class-armed-freighter/)
 - **Method:** Loose-file\
-**Download instructions:** Download the "hd_kt_400_military_droid_carrier_and_lethisk_class_armed_freighter.rar" option.\
+**Download instructions:** Download the "hd_kt_400_military_droid_carrier_and_lethisk_class_armed_freighter.rar" option.
 ---
 ### 3.87 Kebla Yurt Renovation
 
@@ -685,7 +687,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 - **Author:** Sithspecter
 - **Download:** [Mod](http://deadlystream.com/files/file/938-high-quality-cockpit-skyboxes/)
 - **Method:** Loose-file\
-**Download instructions:** Download the small version\
+**Download instructions:** Download the small version
 ---
 ### 3.91 Yavin Station Hangar
 
@@ -731,7 +733,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 - **Download:** [Mod](https://deadlystream.com/files/file/723-high-quality-skyboxes-ii/) [Patch](https://deadlystream.com/files/file/2796-high-quality-skyboxes-model-fixes-v10/)
 - **Method:** Loose-file\
 **Download instructions:** Unless using one of the mods for which Kex has developed skyboxes (not recommended, as they're almost certainly not compatible with this build) simply download the 'HQSkyboxesII_K1.7z' file.\
-**Installation instructions:** Delete m36aa_01_lm0 through m36aa_01_lm2.tga before moving to the override, then apply the patch. Delete `CM_m02abB.tga`, otherwise you crash in Taris upper city.
+**Installation instructions:** Delete `CM_m02abB.tga`, and m36aa_01_lm0 through m36aa_01_lm2.tga before moving to the override, then apply the patch.
 
 ---
 ### 3.97 Ebon Hawk Transparent Cockpit Windows
@@ -781,7 +783,7 @@ Simply change 'LookupGameFolder' from 1 to 0 in the patcher `.ini`. It is normal
 - **Author:** Dark Hope
 - **Download:** [Mod](https://deadlystream.com/files/file/1925-terminal-texture/)
 - **Method:** Loose-file\
-**Download instructions:** Which version to use is up to you; the first image on the mod page is the version of the texture from the "PLC_CompPnl(Vurt's KotOR Visual Resurgence) 2026.rar" download, the second image is the original download, and the third image is the vanilla terminal texture.\
+**Download instructions:** Which version to use is up to you; the first image on the mod page is the version of the texture from the "PLC_CompPnl(Vurt's KotOR Visual Resurgence) 2026.rar" download, the second image is the original download, and the third image is the vanilla terminal texture.
 ---
 ### 3.104 HD Workbench
 
@@ -1011,13 +1013,15 @@ So going off of what FTD says, I'm installing the main mod, and then installing 
 - **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1666)
 - **Method:** TSLPatcher\
 **Download instructions:** Full or Light version is your choice.\
+**Installation instructions:** [2.1.2 TSLPatcher automatic installation detection](#212-tslpatcher-automatic-installation-detection)
+
 ---
 ### 3.137 Manaan Rapid Transit
 
 - **Author:** The_Chaser_One
 - **Download:** [Mod](https://deadlystream.com/files/file/2739-manaan-fast-travel-system/)
 - **Method:** HoloPatcher\
-**Download instructions:** If wishing to use a non-English mod version, download the mod version which matches your language of choice.\
+**Download instructions:** If wishing to use a non-English mod version, download the mod version which matches your language of choice.
 ---
 ### 3.138 Recruit T3-M4 Early
 
@@ -1112,7 +1116,7 @@ So going off of what FTD says, I'm installing the main mod, and then installing 
 - **Author:** Revanator
 - **Download:** [Mod](https://deadlystream.com/files/file/1006-bastilas-dark-bodysuit-by-quanon-revanator/)
 - **Method:** TSLPatcher\
-**Installation instructions:** [2.1.2 TSLPatcher automatic installation detection](#212-tslpatcher-automatic-installation-detection). Use the regular install—other install variants have been linked to sequence breaks, but the normal install variant is fully functional. After installing, delete `P_BastilaBB02.mdl` and `.mdx` from override, see [5.3 Model Problems](#53-model-problems)
+**Installation instructions:** [2.1.2 TSLPatcher automatic installation detection](#212-tslpatcher-automatic-installation-detection), `Regular/regular.ini`. Use the regular install—other install variants have been linked to sequence breaks, but the normal install variant is fully functional. After installing, delete `P_BastilaBB02.mdl` and `.mdx` from override, see [5.3 Model Problems](#53-model-problems)
 
 ---
 ### 3.152 Dueling Arena Adjustment
@@ -1184,7 +1188,7 @@ So going off of what FTD says, I'm installing the main mod, and then installing 
 - **Author:** DarthParametric
 - **Download:** [Mod](https://deadlystream.com/files/file/1199-diversified-jedi-captives-on-the-star-forge/)
 - **Method:** TSLPatcher\
-**Download instructions:** I recommend the Base install option. If you wish to add these NPCs to Dantooine, you can also install the optional module; just make sure to add the compatibility patch if you're using 'Cloaked Jedi Robes' above.\
+**Download instructions:** I recommend the Base install option. If you wish to add these NPCs to Dantooine, you can also install the optional module; just make sure to add the compatibility patch if you're using 'Cloaked Jedi Robes' above.
 ---
 ### 3.162 Juhani Romance Enhancement
 
@@ -1336,18 +1340,24 @@ So going off of what FTD says, I'm installing the main mod, and then installing 
 **Installation instructions:** Ignore the Patch folder unless using K2 Force Powers for K1 (untested, but should function). I strongly recommend the combined install of "Alignment Affects Force Powers + Treat Injury Affects Force Healing."
 
 ---
-### 3.183 Galaxy Map Fix
+### 3.183 ~~Galaxy Map Fix~~
 
 - **Author:** Kexikus & Sith Holocron
 - **Download:** [Mod](http://deadlystream.com/files/file/1068-k1-galaxy-map-fix-pack/)
-- **Method:** TSLPatcher
+- **Method:** TSLPatcher\
+**Installation instructions:** The problem with this mod is that unless you're playing on a Switch lite, you're going to want to be able to switch between 720p and 1080p. If you're on Switch lite then this mod will probably work fine.
+
 ---
 ### 3.184 Remove Duplicate TGA/TPC
 
 - **Author:** Flachzangen, Malacand for the .sh script
-- **Download:** [Mod](https://www.nexusmods.com/kotor/mods/1384) [Mod](https://github.com/KOTOR-Community-Portal/mod-builds/blob/main/scripts/k1/tpc-deduper.sh)
+- **Download:** [Windows users](https://www.nexusmods.com/kotor/mods/1384) [Mac/Linux users](https://github.com/KOTOR-Community-Portal/mod-builds/blob/main/scripts/k1/tpc-deduper.sh)
 - **Method:** .bat Patcher, .sh script\
-**Installation instructions:** For Windows: Place DelDuplicateTGA-TPC in your main game folder (NOT override!), run it, say that TPC should be deleted and do not manually confirm. If you are on a Mac or other device that cannot run .bat files, you can also try downloading the [3C-FD tool](https://github.com/J0-o/3C-FD-Patcher) to identify the duplicates. If you aren't comfortable with downloading C3-FD, a list of all the files you will need to manually delete can be found [here](/modding/mod_builds/k1/delete). MAKE SURE THIS SCRIPT RUNS PROPERLY! On some operating systems, overzealous antivirus setups, or filepaths with particular characters in them it may fail. If the file outputs "Finished, Press any key to continue" but does not list any files it deleted, it is not working, and if it does not work it will crash your game. You can try to resolve this by moving your Override folder to a different location (I recommend a subfolder in your Documents or Downloads directories), putting the .bat file there and running it through that directory, but if that doesn't work you will need to manually go through and delete the duplicates from the link above. For Linux/Mac: Download the script from the linked GitHub page. For Mac, it can be run with the "zsh" command. The script does assume you're using the default installation path for the Steam version; if you aren't, you just need to change the GAMEDIR variable at the top of the script to point to your game folder (NOT your override folder) before you run it. You may have to run the script twice, if a given TPC file has BOTH a matching TGA file and a matching DDS file.
+**Installation instructions:** For Windows: Place DelDuplicateTGA-TPC in your main game folder (NOT override!), run it, say that TPC should be deleted and do not manually confirm.
+
+If you are on a Mac or other device that cannot run .bat files, you can also try downloading the [3C-FD tool](https://github.com/J0-o/3C-FD-Patcher) to identify the duplicates. If you do this, make sure you open the .sh file and change the game install location to your K1romfs folder.
+
+If you aren't comfortable with downloading C3-FD, a list of all the files you will need to manually delete can be found [here](/modding/mod_builds/k1/delete). MAKE SURE THIS SCRIPT RUNS PROPERLY! On some operating systems, overzealous antivirus setups, or filepaths with particular characters in them it may fail. If the file outputs "Finished, Press any key to continue" but does not list any files it deleted, it is not working, and if it does not work it will crash your game. You can try to resolve this by moving your Override folder to a different location (I recommend a subfolder in your Documents or Downloads directories), putting the .bat file there and running it through that directory, but if that doesn't work you will need to manually go through and delete the duplicates from the link above. For Linux/Mac: Download the script from the linked GitHub page. For Mac, it can be run with the "zsh" command. The script does assume you're using the default installation path for the Steam version; if you aren't, you just need to change the GAMEDIR variable at the top of the script to point to your game folder (NOT your override folder) before you run it. You may have to run the script twice, if a given TPC file has BOTH a matching TGA file and a matching DDS file.
 
 ---
 ### 3.185 Ultimate Character Overhaul Patches
@@ -1380,7 +1390,7 @@ So going off of what FTD says, I'm installing the main mod, and then installing 
 - **Author:** Redrob41
 - **Download:** [Mod](https://deadlystream.com/files/file/2659-4x-upscale-character-textures-model-fixes/)
 - **Method:** Loose-file\
-**Download instructions:** 2x `.tpc`\
+**Download instructions:** 2x .tpc\
 **Installation instructions:** If you are on a system which can run .bat files, I strongly recommend using the automated system to deal with compatibility for this mod. To do so, first extract redrob's mod from its archive, then go to [this page](https://github.com/KOTOR-Community-Portal/mod-builds/blob/main/scripts/cleaner.bat) and click on the button with the arrow pointing down at the top of the code list (the one which says "download raw file"). Place cleaner.bat in the folder from redrob's mod called "Copy contents to KotOR's Override folder", then go to [here](https://github.com/KOTOR-Community-Portal/mod-builds/blob/main/scripts/cleanlist_k1.txt) and repeat the same step, placing cleanlist_k1.txt in the same location. You can now run cleanlist.bat: follow the instructions onscreen, selecting whether you did or didn't use any of the given mods (note that the first thing it will ask you is whether you've installed "Mandatory Deletions"; rather than a mod, this is a required step to delete files that need to be removed regardless of what mods you're using, so just approve it). The batch file will automatically delete the incompatible files based on which mods you select that you've used in your install. Once you reach the end of the list, you can exit the .bat window, delete cleaner.bat and cleanlist_k1.txt, and then move the remaining files in the folder to your override. If you cannot run .bat files or feel uncomfortable running this file, you will need to manually delete the files yourself, following the instructions [here](https://github.com/KOTOR-Community-Portal/mod-builds/blob/main/content/k1/redrob_deletions.md).
 
 ---
@@ -1479,14 +1489,19 @@ So going off of what FTD says, I'm installing the main mod, and then installing 
 - **Author:** VeSeeker
 - **Download:** [Mod](https://github.com/VeSeeker/switch-kpm-ips-patches)
 - **Method:** Loose-file\
-**Installation instructions:** These are executable patches for the Switch, based on the [KPM](https://github.com/LaneDibello/Kotor-Patch-Manager) patches. You are free to pick and choose which patches you want to use. At a minimum, I strongly suggest using `AnimatedTextureFix`. I haven't finished porting many patches to the Switch as of yet, I will update this guide when I have ported all of them. To install a patch, you will move the patch **folder** to `atmosphere/exefs_patches/<patchName>/<BID>.ips` on your Switch. Do not put patches into override, or anywhere in `K1romfs`, it will not do anything.
+**Installation instructions:** These are executable patches for the Switch, based on the [KPM](https://github.com/LaneDibello/Kotor-Patch-Manager) patches. You are free to pick and choose which patches you want to use. At a minimum, I strongly suggest using `AnimatedTextureFix`. I haven't finished porting many patches to the Switch as of yet, I will update this guide when I have ported all of them. To install a patch, you will move the patch **folder** to `atmosphere/exefs_patches/<patchName>/<BID>.ips` on your Switch. Do not put the patches themselves into override, or anywhere in `K1romfs`, it will not do anything. Only put a patch's additional files into override, if applicable.
 
 ---
 ## 4 Finalizing
 
 ### 4.1 Finishing Up
 
-Run `ksmt finalize 1`. **Add responses to each YesNo prompt**.
+Run `ksmt finalize 1`. Below are the prompts it will give you. Basically you say yes to everything:
+
+`Convert X files to .tpc using tga2tpc-py? Y`\
+`Downscale all 4K modded textures? Y`\
+`Extra downscales? Y`\
+
 This should leave you with the folder `kotor-switch-modding-tool/0100854015868000`. Connect your Switch (or sd card) to your computer and navigate to `atmosphere/contents`. If there is already a `0100854015868000` folder, delete it, and then move the finalized `0100854015868000` from the modding tool. The file structure should be: `atmophere/contents/0100854015868000/`.
 
 Don't forget to move IPS patches to `atmosphere/exefs_patches/`!
